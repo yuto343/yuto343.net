@@ -1,0 +1,98 @@
+---
+import { useConstants } from "../../libs/use-constants";
+import { COLOR, SPACING, FONT_SIZE } from "../../constants";
+import IconSlideshow from "../shared/icons/icon-slideshow.astro";
+import IconOuter from "./icon-outer.astro";
+const IMG_SIZE = "120px";
+const ICON_OUTER_SIZE = "30px";
+const ICON_SIZE = 18;
+---
+
+<div class='container'>
+  <img src='./nakano.avif' class='img' />
+  <ul class='timeline'>
+    <li class='item -right'>
+      <IconOuter size={ICON_OUTER_SIZE}>
+        <IconSlideshow size={ICON_SIZE} />
+      </IconOuter>
+      <time class='date'>2022-11-21</time>
+      <h2 class='title'>Techfeed experts night vol.4</h2>
+      <a href='#' class='link'>Jamstackの利点とコツ</a>
+    </li>
+    <li class='item -left'>
+      <IconOuter size={ICON_OUTER_SIZE}>
+        <IconSlideshow size={ICON_SIZE} />
+      </IconOuter>
+      <time class='date'>2022-11-21</time>
+      <h2 class='title'>Techfeed experts night vol.4</h2>
+      <a href='#' class='link'>Jamstackの利点とコツ</a>
+    </li>
+  </ul>
+</div>
+<style
+  define:vars={{
+    ...useConstants({ COLOR, SPACING, FONT_SIZE }),
+    ICON_OUTER_SIZE,
+    IMG_SIZE,
+  }}
+>
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .img {
+    border-radius: 100%;
+    width: var(--IMG_SIZE);
+    display: block;
+  }
+  .timeline {
+    padding: var(--SPACING_PX100) 0 0 0;
+    border-left: 1px solid var(--COLOR_GRAY500);
+    align-self: stretch;
+    margin: 0 0 0 50%;
+    position: relative;
+  }
+  .item {
+    list-style: none;
+    display: grid;
+    column-gap: var(--SPACING_PX8);
+    row-gap: var(--SPACING_PX4);
+  }
+  .item.-right {
+    grid-template:
+      "icon date" auto
+      "icon title" auto
+      "icon link" auto
+      / var(--ICON_OUTER_SIZE) 1fr;
+    margin-left: calc(-1 * var(--ICON_OUTER_SIZE) / 2);
+  }
+  .item.-left {
+    text-align: right;
+    grid-template:
+      "date icon" auto
+      "title icon" auto
+      "link icon" auto
+      / 1fr var(--ICON_OUTER_SIZE);
+    margin-right: calc(-1 * var(--ICON_OUTER_SIZE) / 2);
+    position: relative;
+    right: 100%;
+  }
+  .date {
+    grid-area: date;
+    hegiht: var(--ICON_OUTER_SIZE);
+    font-size: var(--FONT_SIZE_PX12);
+    line-height: var(--ICON_OUTER_SIZE);
+  }
+  .title {
+    grid-area: title;
+    margin: 0;
+    font-weight: normal;
+    font-size: var(--FONT_SIZE_PX14);
+  }
+  .link {
+    grid-area: link;
+    font-size: var(--FONT_SIZE_PX16);
+  }
+</style>

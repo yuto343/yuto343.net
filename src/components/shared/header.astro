@@ -1,0 +1,11 @@
+---
+import { useConstants } from "../../libs/use-constants";
+import { SPACING } from "../../constants";
+---
+
+<div class='container'></div>
+<style define:vars={useConstants({ SPACING })}>
+  .container {
+    margin-bottom: var(--SPACING_PX100);
+  }
+</style>

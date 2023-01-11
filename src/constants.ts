@@ -3,6 +3,7 @@ export const COLOR = {
   GRAY200: "#e5e5e5",
   GRAY300: "#cbd5e1",
   GRAY500: "#64748b",
+  GRAY600: "#475569",
 };
 export const SPACING = {
   PX1: "1px",

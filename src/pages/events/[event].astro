@@ -1,0 +1,10 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const events = await getCollection("events");
+  return events.map((event) => ({
+    params: { event: event.slug },
+  }));
+}
+---

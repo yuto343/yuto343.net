@@ -1,0 +1,88 @@
+---
+interface Props {
+  position: "right" | "left";
+  title: string;
+  date: string;
+  link: string;
+  at: string;
+}
+import { useConstants } from "../../../libs/use-constants";
+import { COLOR, SPACING, FONT_SIZE } from "../../../constants";
+import IconOuter from "../timeline/icon-outer.astro";
+import { Icon } from "astro-iconify";
+
+const ICON_OUTER_SIZE = "26px";
+const ICON_SIZE = 14;
+
+const { position, title, date, link, at } = Astro.props;
+---
+
+<li class={["item", position === "right" ? "-right" : "-left"].join(" ")}>
+  <IconOuter size={ICON_OUTER_SIZE}>
+    <Icon
+      name='carbon:group-presentation'
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+      fill='currentcolor'
+    />
+  </IconOuter>
+  <time class='date'>{date}</time>
+  <h2 class='title'>{at}</h2>
+  <a href={link} class='link'>{title}</a>
+
+  <style
+    define:vars={{
+      ...useConstants({ COLOR, SPACING, FONT_SIZE }),
+      ICON_OUTER_SIZE,
+    }}
+  >
+    .item {
+      list-style: none;
+      display: grid;
+      column-gap: var(--SPACING_PX8);
+      row-gap: var(--SPACING_PX4);
+    }
+    .item.-right {
+      grid-template:
+        "icon date" auto
+        "icon title" auto
+        "icon link" auto
+        / var(--ICON_OUTER_SIZE) 1fr;
+      margin-left: calc(-1 * var(--ICON_OUTER_SIZE) / 2);
+    }
+    .item.-left {
+      text-align: right;
+      grid-template:
+        "date icon" auto
+        "title icon" auto
+        "link icon" auto
+        / 1fr var(--ICON_OUTER_SIZE);
+      margin-right: calc(-1 * var(--ICON_OUTER_SIZE) / 2);
+      position: relative;
+      right: 100%;
+    }
+    .date {
+      grid-area: date;
+      hegiht: var(--ICON_OUTER_SIZE);
+      font-size: var(--FONT_SIZE_PX12);
+      line-height: var(--ICON_OUTER_SIZE);
+    }
+    .title {
+      grid-area: title;
+      margin: 0;
+      font-weight: normal;
+      font-size: var(--FONT_SIZE_PX14);
+    }
+    .link {
+      grid-area: link;
+      font-size: var(--FONT_SIZE_PX16);
+      color: var(--COLOR_GRAY600);
+    }
+    .link:visited {
+      color: var(--COLOR_GRAY600);
+    }
+    .link:hover {
+      color: var(--COLOR_GRAY500);
+    }
+  </style>
+</li>

@@ -64,6 +64,27 @@ declare module 'astro:content' {
   collection: "events",
   data: InferEntrySchema<"events">
 },
+"4.md": {
+  id: "4.md",
+  slug: "4",
+  body: string,
+  collection: "events",
+  data: InferEntrySchema<"events">
+},
+"5.md": {
+  id: "5.md",
+  slug: "5",
+  body: string,
+  collection: "events",
+  data: InferEntrySchema<"events">
+},
+"6.md": {
+  id: "6.md",
+  slug: "6",
+  body: string,
+  collection: "events",
+  data: InferEntrySchema<"events">
+},
 },
 
 	};

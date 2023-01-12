@@ -2,38 +2,76 @@
 interface Props {
   position: "right" | "left";
   title: string;
-  date: string;
+  date: Date;
   link: string;
-  at: string;
+  dayDiff: number;
+  type: "conf" | "company" | "article" | "development";
+  at?: string;
 }
 import { useConstants } from "../../../libs/use-constants";
 import { COLOR, SPACING, FONT_SIZE } from "../../../constants";
 import IconOuter from "../timeline/icon-outer.astro";
 import { Icon } from "astro-iconify";
+import { formatDate } from "../../../libs/date";
 
 const ICON_OUTER_SIZE = "26px";
 const ICON_SIZE = 14;
 
-const { position, title, date, link, at } = Astro.props;
+const { position, title, date, link, at, dayDiff, type } = Astro.props;
 ---
 
-<li class={["item", position === "right" ? "-right" : "-left"].join(" ")}>
+<li class:list={["item", position === "right" ? "-right" : "-left"]}>
   <IconOuter size={ICON_OUTER_SIZE}>
-    <Icon
-      name='carbon:group-presentation'
-      width={ICON_SIZE}
-      height={ICON_SIZE}
-      fill='currentcolor'
-    />
+    {
+      type === "conf" && (
+        <Icon
+          name='carbon:group-presentation'
+          width={ICON_SIZE}
+          height={ICON_SIZE}
+          fill='currentcolor'
+        />
+      )
+    }
+    {
+      type === "company" && (
+        <Icon
+          name='carbon:building'
+          width={ICON_SIZE}
+          height={ICON_SIZE}
+          fill='currentcolor'
+        />
+      )
+    }
+    {
+      type === "article" && (
+        <Icon
+          name='carbon:pen-fountain'
+          width={ICON_SIZE}
+          height={ICON_SIZE}
+          fill='currentcolor'
+        />
+      )
+    }
+    {
+      type === "development" && (
+        <Icon
+          name='carbon:code'
+          width={ICON_SIZE}
+          height={ICON_SIZE}
+          fill='currentcolor'
+        />
+      )
+    }
   </IconOuter>
-  <time class='date'>{date}</time>
-  <h2 class='title'>{at}</h2>
+  <time class='date'>{formatDate(date)}</time>
+  {at && <h2 class='title'>{at}</h2>}
   <a href={link} class='link'>{title}</a>
 
   <style
     define:vars={{
       ...useConstants({ COLOR, SPACING, FONT_SIZE }),
       ICON_OUTER_SIZE,
+      dayDiff: `${dayDiff * 0.2}px`,
     }}
   >
     .item {
@@ -41,6 +79,7 @@ const { position, title, date, link, at } = Astro.props;
       display: grid;
       column-gap: var(--SPACING_PX8);
       row-gap: var(--SPACING_PX4);
+      margin-bottom: var(--dayDiff);
     }
     .item.-right {
       grid-template:

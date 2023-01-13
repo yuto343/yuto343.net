@@ -1,11 +1,52 @@
 ---
 import { useConstants } from "../../libs/use-constants";
-import { SPACING } from "../../constants";
+import { SPACING, COLOR } from "../../constants";
+import { Icon } from "astro-iconify";
 ---
 
-<header class='container'></header>
-<style define:vars={useConstants({ SPACING })}>
+<header class='container'>
+  <nav>
+    <ul class='linkList'>
+      <li class='link'>
+        <a href='#'>
+          <span class='iconOuter'>
+            <Icon name='carbon:logo-twitter' />
+          </span>
+        </a>
+      </li>
+      <li class='link'>
+        <a href='#'>
+          <span class='iconOuter'>
+            <Icon name='carbon:logo-github' />
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<style define:vars={useConstants({ SPACING, COLOR })}>
   .container {
-    margin-bottom: var(--SPACING_PX100);
+    height: 40px;
+  }
+  .linkList {
+    display: flex;
+    padding: var(--SPACING_PX12);
+    margin: 0;
+    justify-content: flex-end;
+    gap: var(--SPACING_PX12);
+  }
+  .link {
+    width: 30px;
+    list-style: none;
+  }
+
+  .iconOuter {
+    color: var(--COLOR_GRAY600);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .link:hover .iconOuter {
+    color: var(--COLOR_GRAY500);
   }
 </style>

@@ -2,18 +2,21 @@
 import Header from "../components/shared/header.astro";
 import Layout from "../layouts/layout.astro";
 import Timeline from "../components/index/timeline.astro";
+import { Sprite } from "astro-iconify";
 ---
 
 <Layout>
   <Header />
   <div class='container'>
-    <Timeline />
+    <!-- アイコンをsvgシンボルにするため -->
+    <Sprite.Provider>
+      <Timeline />
+    </Sprite.Provider>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
   </div>
 </Layout>
-
-<style>
-  .container {
-    display: flex;
-    justify-content: center;
-  }
-</style>

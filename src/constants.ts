@@ -27,3 +27,10 @@ export const FONT_SIZE = {
   PX24: "24px",
   PX36: "36px",
 };
+
+export const TIMELINE_ICONS = {
+  conf: "carbon:group-presentation",
+  company: "carbon:building",
+  article: "carbon:pen-fountain",
+  development: "carbon:code",
+};

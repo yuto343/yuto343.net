@@ -9,9 +9,9 @@ interface Props {
   at?: string;
 }
 import { useConstants } from "../../../libs/use-constants";
-import { COLOR, SPACING, FONT_SIZE } from "../../../constants";
+import { COLOR, SPACING, FONT_SIZE, TIMELINE_ICONS } from "../../../constants";
 import IconOuter from "../timeline/icon-outer.astro";
-import { Icon } from "astro-iconify";
+import { Icon, Sprite } from "astro-iconify";
 import { formatDate } from "../../../libs/date";
 
 const ICON_OUTER_SIZE = "26px";
@@ -22,46 +22,12 @@ const { position, title, date, link, at, dayDiff, type } = Astro.props;
 
 <li class:list={["item", position === "right" ? "-right" : "-left"]}>
   <IconOuter size={ICON_OUTER_SIZE}>
-    {
-      type === "conf" && (
-        <Icon
-          name='carbon:group-presentation'
-          width={ICON_SIZE}
-          height={ICON_SIZE}
-          fill='currentcolor'
-        />
-      )
-    }
-    {
-      type === "company" && (
-        <Icon
-          name='carbon:building'
-          width={ICON_SIZE}
-          height={ICON_SIZE}
-          fill='currentcolor'
-        />
-      )
-    }
-    {
-      type === "article" && (
-        <Icon
-          name='carbon:pen-fountain'
-          width={ICON_SIZE}
-          height={ICON_SIZE}
-          fill='currentcolor'
-        />
-      )
-    }
-    {
-      type === "development" && (
-        <Icon
-          name='carbon:code'
-          width={ICON_SIZE}
-          height={ICON_SIZE}
-          fill='currentcolor'
-        />
-      )
-    }
+    <Sprite
+      name={TIMELINE_ICONS[type]}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+      fill='currentcolor'
+    />
   </IconOuter>
   <time class='date'>{formatDate(date)}</time>
   {at && <h2 class='title'>{at}</h2>}

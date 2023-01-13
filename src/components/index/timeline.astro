@@ -42,53 +42,53 @@ const events = await getCollection("events").then((ev) =>
       <time>{formatDate(birthday)}</time>
     </li>
   </ul>
+  <style
+    define:vars={{
+      ...useConstants({ COLOR, SPACING, FONT_SIZE }),
+      IMG_SIZE,
+      BIRTHDAY_SIZE,
+    }}
+  >
+    .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: var(--SPACING_PX100);
+    }
+    .img {
+      border-radius: 100%;
+      width: var(--IMG_SIZE);
+      display: block;
+      border: 1px solid var(--COLOR_GRAY500);
+    }
+    .timeline {
+      padding: var(--SPACING_PX100) 0 0 0;
+      border-left: 1px solid var(--COLOR_GRAY500);
+      align-self: stretch;
+      margin: 0 0 0 50%;
+      position: relative;
+    }
+    .birthday {
+      list-style: none;
+      margin-left: calc(-1 * var(--BIRTHDAY_SIZE) / 2);
+      display: flex;
+      align-items: center;
+      gap: var(--SPACING_PX8);
+      position: relative;
+      top: 5px;
+    }
+    .birthday > span {
+      box-sizing: border-box;
+      background-color: var(--COLOR_GRAY200);
+      width: var(--BIRTHDAY_SIZE);
+      height: var(--BIRTHDAY_SIZE);
+      display: block;
+      border: 1px solid var(--COLOR_GRAY500);
+      border-radius: 100%;
+    }
+    .birthday > time {
+      font-size: var(--FONT_SIZE_PX12);
+    }
+  </style>
 </div>
-<style
-  define:vars={{
-    ...useConstants({ COLOR, SPACING, FONT_SIZE }),
-    IMG_SIZE,
-    BIRTHDAY_SIZE,
-  }}
->
-  .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: var(--SPACING_PX100);
-  }
-  .img {
-    border-radius: 100%;
-    width: var(--IMG_SIZE);
-    display: block;
-    border: 1px solid var(--COLOR_GRAY500);
-  }
-  .timeline {
-    padding: var(--SPACING_PX100) 0 0 0;
-    border-left: 1px solid var(--COLOR_GRAY500);
-    align-self: stretch;
-    margin: 0 0 0 50%;
-    position: relative;
-  }
-  .birthday {
-    list-style: none;
-    margin-left: calc(-1 * var(--BIRTHDAY_SIZE) / 2);
-    display: flex;
-    align-items: center;
-    gap: var(--SPACING_PX8);
-    position: relative;
-    top: 5px;
-  }
-  .birthday > span {
-    box-sizing: border-box;
-    background-color: var(--COLOR_GRAY200);
-    width: var(--BIRTHDAY_SIZE);
-    height: var(--BIRTHDAY_SIZE);
-    display: block;
-    border: 1px solid var(--COLOR_GRAY500);
-    border-radius: 100%;
-  }
-  .birthday > time {
-    font-size: var(--FONT_SIZE_PX12);
-  }
-</style>

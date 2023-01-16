@@ -34,3 +34,8 @@ export const TIMELINE_ICONS = {
   article: "carbon:pen-fountain",
   development: "carbon:code",
 };
+
+export const SNS_LINKS = {
+  twitter: "https://twitter.com/uchoco898",
+  github: "https://github.com/yuto343",
+};

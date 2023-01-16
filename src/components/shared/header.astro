@@ -1,26 +1,23 @@
 ---
 import { useConstants } from "../../libs/use-constants";
-import { SPACING, COLOR } from "../../constants";
+import { SPACING, COLOR, SNS_LINKS } from "../../constants";
 import { Icon } from "astro-iconify";
 ---
 
 <header class='container'>
   <nav>
     <ul class='linkList'>
-      <li class='link'>
-        <a href='#'>
-          <span class='iconOuter'>
-            <Icon name='carbon:logo-twitter' />
-          </span>
-        </a>
-      </li>
-      <li class='link'>
-        <a href='#'>
-          <span class='iconOuter'>
-            <Icon name='carbon:logo-github' />
-          </span>
-        </a>
-      </li>
+      {
+        Object.entries(SNS_LINKS).map(([key, value]) => (
+          <li class='link'>
+            <a href={value}>
+              <span class='iconOuter'>
+                <Icon name={`carbon:logo-${key}`} />
+              </span>
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </header>

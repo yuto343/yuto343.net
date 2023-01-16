@@ -1,5 +1,6 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
+import { formatDate } from "../../libs/date";
 import Header from "../../components/shared/header.astro";
 import Layout from "../../layouts/layout.astro";
 
@@ -15,15 +16,15 @@ interface Props {
 }
 
 const { event } = Astro.props;
-const { Content, remarkPluginFrontmatter } = await event.render();
-const test = await event.render();
-const { data } = event;
+const { Content } = await event.render();
 ---
 
 <Layout>
   <Header />
   <div>
     <h1>{event.data.title}</h1>
+    <time>{formatDate(event.data.date)}</time>
+    {event.data.at && <p>{event.data.at}</p>}
   </div>
   <Content />
 </Layout>

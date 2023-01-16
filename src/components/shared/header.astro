@@ -2,10 +2,23 @@
 import { useConstants } from "../../libs/use-constants";
 import { SPACING, COLOR, SNS_LINKS } from "../../constants";
 import { Icon } from "astro-iconify";
+const { pathname } = Astro.url;
+console.log(pathname);
 ---
 
 <header class='container'>
   <nav>
+    <ul class='linkList'>
+      {
+        pathname !== "/" && (
+          <li class='link'>
+            <a href='/'>
+              <img src='../nakano.avif' title='indexに戻る' class='img' />
+            </a>
+          </li>
+        )
+      }
+    </ul>
     <ul class='linkList'>
       {
         Object.entries(SNS_LINKS).map(([key, value]) => (
@@ -25,11 +38,23 @@ import { Icon } from "astro-iconify";
   .container {
     height: 40px;
   }
+  a:hover {
+    opacity: 0.9;
+  }
+  img {
+    width: 30px;
+    border-radius: 100%;
+    display: block;
+    border: 1px solid var(--COLOR_GRAY500);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
   .linkList {
     display: flex;
     padding: var(--SPACING_PX12);
     margin: 0;
-    justify-content: flex-end;
     gap: var(--SPACING_PX12);
   }
   .link {

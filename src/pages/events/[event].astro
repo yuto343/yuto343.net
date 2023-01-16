@@ -5,6 +5,7 @@ import { CollectionEntry, getCollection } from "astro:content";
 import { formatDate } from "../../libs/date";
 import Header from "../../components/shared/header.astro";
 import Layout from "../../layouts/layout.astro";
+import Draft from "../../components/event/draft.astro";
 
 export async function getStaticPaths() {
   const events = await getCollection("events");
@@ -22,19 +23,26 @@ const { Content } = await event.render();
 ---
 
 <Layout>
-  <Header />
-  <div>
-    <h1>{event.data.title}</h1>
+  {
+    event.data.draft ? (
+      <Draft />
+    ) : (
+        <Header />
+        <div>
+          <h1>{event.data.title}</h1>
 
-    <div class='sub'>
-      <time>{formatDate(event.data.date)}</time>
-      {event.data.at && <p>@{event.data.at}</p>}
-    </div>
-  </div>
-  <div class='contentContainer'>
-    <Content />
-  </div>
+          <div class='sub'>
+            <time>{formatDate(event.data.date)}</time>
+            {event.data.at && <p>@{event.data.at}</p>}
+          </div>
+        </div>
+        <div class='contentContainer'>
+          <Content />
+        </div>
+    )
+  }
 </Layout>
+
 <style define:vars={useConstants({ FONT_SIZE, COLOR, SPACING })}>
   time {
     font-size: var(--FONT_SIZE_PX12);

@@ -4,6 +4,7 @@ import { COLOR, SPACING, FONT_SIZE } from "../../constants";
 import { getCollection } from "astro:content";
 import Item from "./timeline/item.astro";
 import { formatDate, getDayDiff } from "../../libs/date";
+import image from "../../nakano.avif";
 const IMG_SIZE = "120px";
 const BIRTHDAY_SIZE = "12px";
 const birthday = new Date("1997-12-29");
@@ -15,7 +16,7 @@ const events = await getCollection("events").then((ev) =>
 ---
 
 <div class='container'>
-  <img src='./nakano.avif' class='img' />
+  <img src={image} class='img' />
   <ul class='timeline'>
     {
       events.map(({ data: { title, at, date, type }, slug }, index) => {

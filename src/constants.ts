@@ -4,7 +4,8 @@ export const COLOR = {
   GRAY300: "#cbd5e1",
   GRAY500: "#64748b",
   GRAY600: "#475569",
-  CAUTION_DEFAULT: "#dc2626",
+  DENGER_DEFAULT: "#dc2626",
+  CAUTION_DEFAULT: "#facc15",
 };
 export const SPACING = {
   PX1: "1px",

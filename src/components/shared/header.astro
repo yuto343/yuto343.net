@@ -3,6 +3,7 @@ import { useConstants } from "../../libs/use-constants";
 import { SPACING, COLOR, SNS_LINKS } from "../../constants";
 import { Icon } from "astro-iconify";
 const { pathname } = Astro.url;
+import image from "../../nakano.avif";
 ---
 
 <header class='container'>
@@ -12,7 +13,7 @@ const { pathname } = Astro.url;
         pathname !== "/" && (
           <li class='link'>
             <a href='/'>
-              <img src='../nakano.avif' title='indexに戻る' class='img' />
+              <img src={image} title='indexに戻る' class='img' />
             </a>
           </li>
         )

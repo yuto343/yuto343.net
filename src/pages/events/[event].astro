@@ -33,7 +33,7 @@ const { Content } = await event.render();
           <h1>{event.data.title}</h1>
 
             <time>{formatDate(event.data.date)}</time>
-            {event.data.at && <p>@{event.data.at}</p>}
+            {event.data.at && <p>{event.data.at}</p>}
         </div>
         <div class='contentContainer'>
           <Content />

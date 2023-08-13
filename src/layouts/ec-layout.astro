@@ -1,0 +1,26 @@
+---
+import { useConstants } from "../libs/use-constants";
+import { COLOR } from "../constants";
+---
+
+<!DOCTYPE html>
+<html lang='ja'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <title>yuto343.net | free market</title>
+    <meta name='description' content='' />
+  </head>
+  <body>
+    <slot />
+  </body>
+  <style define:vars={useConstants({ COLOR })}>
+    html {
+      min-height: 100vh;
+      background-color: #b99f8a;
+    }
+    body {
+      margin: 0;
+    }
+  </style>
+</html>

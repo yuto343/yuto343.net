@@ -5,8 +5,10 @@ import { getCollection } from "astro:content";
 import Item from "./timeline/item.astro";
 import { formatDate, getDayDiff } from "../../libs/date";
 import image from "../../nakano.avif";
+import { Icon } from "astro-iconify";
+import IconOuter from "./timeline/icon-outer.astro";
 const IMG_SIZE = "120px";
-const BIRTHDAY_SIZE = "12px";
+const ICON_SIZE = "26px";
 const birthday = new Date("1997-12-29");
 const events = await getCollection("events").then((ev) =>
   ev.sort(
@@ -39,7 +41,14 @@ const events = await getCollection("events").then((ev) =>
       })
     }
     <li class='birthday'>
-      <span></span>
+      <IconOuter size='26px'>
+        <Icon
+          name='mdi:birthday-cake'
+          width={14}
+          height={14}
+          fill='currentcolor'
+        />
+      </IconOuter>
       <time>{formatDate(birthday)}</time>
     </li>
   </ul>
@@ -47,7 +56,7 @@ const events = await getCollection("events").then((ev) =>
     define:vars={{
       ...useConstants({ COLOR, SPACING, FONT_SIZE }),
       IMG_SIZE,
-      BIRTHDAY_SIZE,
+      ICON_SIZE,
     }}
   >
     .container {
@@ -73,21 +82,12 @@ const events = await getCollection("events").then((ev) =>
     }
     .birthday {
       list-style: none;
-      margin-left: calc(-1 * var(--BIRTHDAY_SIZE) / 2);
+      margin-left: calc(-1 * var(--ICON_SIZE) / 2);
       display: flex;
       align-items: center;
       gap: var(--SPACING_PX8);
       position: relative;
       top: 5px;
-    }
-    .birthday > span {
-      box-sizing: border-box;
-      background-color: var(--COLOR_GRAY200);
-      width: var(--BIRTHDAY_SIZE);
-      height: var(--BIRTHDAY_SIZE);
-      display: block;
-      border: 1px solid var(--COLOR_GRAY500);
-      border-radius: 100%;
     }
     .birthday > time {
       font-size: var(--FONT_SIZE_PX12);

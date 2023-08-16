@@ -1,0 +1,22 @@
+---
+import Header from "../../components/shared/header.astro";
+import Layout from "../../layouts/layout.astro";
+import NstudioPage from "../../components/nstudio.astro";
+import { Sprite } from "astro-iconify";
+---
+
+<Layout>
+  <Header />
+  <div class='container'>
+    <!-- アイコンをsvgシンボルにするため -->
+    <Sprite.Provider>
+      <NstudioPage />
+    </Sprite.Provider>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </div>
+</Layout>

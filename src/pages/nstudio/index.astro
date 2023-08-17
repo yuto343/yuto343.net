@@ -1,22 +1,47 @@
 ---
 import Header from "../../components/shared/header.astro";
-import Layout from "../../layouts/layout.astro";
-import NstudioPage from "../../components/nstudio.astro";
-import { Sprite } from "astro-iconify";
+import NstudioLayout from "../../layouts/nstudio-layout.astro";
+import Case1 from "../../components/nstudio/case-1.astro";
+import MainVisualContainer from "../../components/nstudio/main-visual-container.svelte";
+import Dots from "../../components/nstudio/dots.svelte";
 ---
 
-<Layout>
-  <Header />
-  <div class='container'>
-    <!-- アイコンをsvgシンボルにするため -->
-    <Sprite.Provider>
-      <NstudioPage />
-    </Sprite.Provider>
-    <style>
-      .container {
-        display: flex;
-        justify-content: center;
-      }
-    </style>
+<NstudioLayout>
+  <MainVisualContainer client:load />
+  <div class='mandatory'>
+    <section>
+      <Header />
+      <div class='container'>
+        <b>スクロール</b>
+        <Dots client:load />
+      </div>
+    </section>
+    <section>
+      <Case1 />
+    </section>
   </div>
-</Layout>
+</NstudioLayout>
+<style>
+  .mandatory {
+    height: 100vh;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+  }
+  section {
+    height: 100vh;
+    scroll-snap-align: start;
+  }
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-s);
+  }
+
+  b {
+    font-size: var(--fontsize-2xl);
+    color: #468966;
+  }
+</style>

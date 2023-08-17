@@ -41,3 +41,7 @@ export const SNS_LINKS = {
   twitter: "https://twitter.com/uchoco898",
   github: "https://github.com/yuto343",
 };
+
+export const COMPONENT_SIZE = {
+  HEADER_HEIGHT: 56,
+};

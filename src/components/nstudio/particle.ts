@@ -8,7 +8,7 @@ export class Particle {
   destination: { x: number; y: number };
 
   // 粒子の半径
-  r = 5;
+  r: number;
 
   // 粒子の速度
   vx = (Math.random() - 0.5) * 20;
@@ -27,6 +27,7 @@ export class Particle {
   constructor(x: number, y: number, windowWidth: number, windowHeight: number) {
     this.x = windowWidth / 2;
     this.y = windowHeight / 2;
+    this.r = windowWidth * 0.008;
     this.destination = { x, y };
   }
 
@@ -58,7 +59,8 @@ export class Particle {
     // 粒子の描画
     context.fillStyle = this.color;
     context.beginPath();
-    context.arc(this.x, this.y, this.r, Math.PI * 2, false);
+    // context.arc(this.x, this.y, this.r, Math.PI * 2, false);
+    context.roundRect(this.x, this.y, this.r, this.r, 3);
     context.fill();
 
     // // 粒子の目標座標位置と現在の座標位置の距離を計算

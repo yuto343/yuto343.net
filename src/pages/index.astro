@@ -1,11 +1,11 @@
 ---
 import Header from "../components/shared/header.astro";
-import Layout from "../layouts/layout.astro";
+import BaseLayout from "../layouts/base-layout.astro";
 import Timeline from "../components/index/timeline.astro";
 import { Sprite } from "astro-iconify";
 ---
 
-<Layout>
+<BaseLayout>
   <Header />
   <div class='container'>
     <!-- アイコンをsvgシンボルにするため -->
@@ -19,4 +19,4 @@ import { Sprite } from "astro-iconify";
       }
     </style>
   </div>
-</Layout>
+</BaseLayout>

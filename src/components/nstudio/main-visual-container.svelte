@@ -16,6 +16,4 @@
   });
 </script>
 
-<div>
-  <MainVisual {isIntersecting} />
-</div>
+<MainVisual {isIntersecting} />

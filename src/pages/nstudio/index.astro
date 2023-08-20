@@ -4,17 +4,15 @@ import NstudioLayout from "../../layouts/nstudio-layout.astro";
 import Case1 from "../../components/nstudio/case-1.astro";
 import MainVisualContainer from "../../components/nstudio/main-visual-container.svelte";
 import Dots from "../../components/nstudio/dots.svelte";
+import ScrollDownIcon from "../../components/nstudio/scroll-down-icon.svelte";
 ---
 
 <NstudioLayout>
-  <MainVisualContainer client:load />
   <div class='mandatory'>
     <section>
       <Header />
-      <div class='container'>
-        <b>スクロール</b>
-        <Dots client:load />
-      </div>
+      <MainVisualContainer client:load />
+      <ScrollDownIcon client:visible />
     </section>
     <section>
       <Case1 />
@@ -30,18 +28,6 @@ import Dots from "../../components/nstudio/dots.svelte";
   section {
     height: 100vh;
     scroll-snap-align: start;
-  }
-  .container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-s);
-  }
-
-  b {
-    font-size: var(--fontsize-2xl);
-    color: #468966;
+    position: relative;
   }
 </style>

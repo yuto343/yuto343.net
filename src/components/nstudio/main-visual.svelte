@@ -44,7 +44,7 @@
 
     ctx.font = "bold " + ww / 7 + "px sans-serif";
     ctx.textAlign = "center";
-    ctx.fillText(copy, ww / 2, wh / 5);
+    ctx.fillText(copy, ww / 2, wh / 3);
 
     var data = ctx.getImageData(0, 0, ww, wh).data;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -97,11 +97,7 @@
 
 <style>
   canvas {
-    position: absolute;
-    top: 0;
     width: 100%;
     height: 100vh;
-    transition: 0.5s;
-    z-index: -1;
   }
 </style>

@@ -14,16 +14,6 @@
   let w;
   let h;
 
-  export let isIntersecting;
-
-  $: if (isIntersecting) {
-    copy = "CASE1";
-    initScene();
-  } else {
-    copy = "Nstudio";
-    initScene();
-  }
-
   let copy = "Nstudio";
   let particles = [];
 
@@ -90,7 +80,6 @@
   bind:this={canvas}
   on:click={onClick}
   class="canvas"
-  class:isIntersecting
   bind:clientHeight={h}
   bind:clientWidth={w}
 />

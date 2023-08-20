@@ -1,0 +1,141 @@
+---
+const WIDTH = "380px";
+const HEIGHT = "650px";
+const DOT_SIZE = "5px";
+---
+
+<div class='root'>
+  <span class='top-bar-1'></span>
+  <span class='top-bar-2'></span>
+  <span class='top-bar-3'></span>
+  <div class='screen'>
+    <div class='notch'></div>
+    <div class='top-vezel'>
+      <span class='top-vezel-child'>
+        <span class='node-1'></span>
+        <span class='node-1'></span>
+      </span>
+      <span class='top-vezel-child'>
+        <span class='node-2'></span>
+        <span class='node-2'></span>
+      </span>
+    </div>
+    <div class='content'>
+      <slot />
+    </div>
+    <div class='bottom-vezel'>
+      <span class='bottom-vezel-child'>
+        <span class='node-2'></span>
+        <span class='node-2'></span>
+      </span>
+      <span class='bottom-vezel-child'>
+        <span class='node-1'></span>
+        <span class='node-1'></span>
+      </span>
+    </div>
+  </div>
+  <span class='bottom-bar-1'></span>
+  <span class='bottom-bar-2'></span>
+  <span class='bottom-bar-3'></span>
+  <span class='footer'></span>
+</div>
+<style define:vars={{ width: WIDTH, height: HEIGHT, dotSize: DOT_SIZE }}>
+  .root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: var(--width);
+    height: var(--height);
+    background-color: var(--color-base-light);
+    border-right: 10px solid var(--color-base-dark);
+    border-left: 10px solid var(--color-base-dark);
+    overflow: hidden;
+  }
+  .top-bar-1 {
+    display: block;
+    width: calc(var(--width) - 30px);
+    height: var(--dotSize);
+    background: var(--color-base-dark);
+  }
+  .top-bar-2 {
+    display: block;
+    width: calc(var(--width) - 20px);
+    height: var(--dotSize);
+    background: var(--color-base-dark);
+  }
+  .top-bar-3 {
+    display: block;
+    width: calc(var(--width) - 10px);
+    height: var(--dotSize);
+    background: var(--color-base-dark);
+  }
+  .bottom-bar-1 {
+    display: block;
+    width: calc(var(--width) - 10px);
+    height: var(--dotSize);
+    background: var(--color-base-dark);
+  }
+  .bottom-bar-2 {
+    display: block;
+    width: calc(var(--width) - 20px);
+    height: var(--dotSize);
+    background: var(--color-base-dark);
+  }
+  .bottom-bar-3 {
+    display: block;
+    width: calc(var(--width) - 30px);
+    height: var(--dotSize);
+    background: var(--color-base-dark);
+  }
+  .top-vezel,
+  .bottom-vezel {
+    z-index: 1;
+  }
+  .top-vezel-child {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bottom-vezel-child {
+    display: flex;
+    justify-content: space-between;
+  }
+  .node-1 {
+    display: block;
+    background-color: var(--color-base-dark);
+    width: calc(var(--dotSize) * 2);
+    height: var(--dotSize);
+  }
+  .node-2 {
+    display: block;
+    background-color: var(--color-base-dark);
+    width: calc(var(--dotSize) * 1);
+    height: var(--dotSize);
+  }
+  .notch {
+    z-index: 1;
+    position: absolute;
+    background-color: var(--color-base-dark);
+    top: calc(var(--dotSize) * 2);
+    width: calc(var(--width) / 3);
+    height: calc(var(--dotSize) * 5);
+    left: calc((var(--width) - (var(--width) / 3)) / 2 - var(--dotSize) * 2);
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: blue;
+  }
+  :global(.content > img) {
+    object-fit: contain;
+  }
+</style>

@@ -1,19 +1,47 @@
+---
+import { Image } from "astro:assets";
+import GameBoy from "./gameboy.astro";
+import img from "../../assets/case/sushi-tsuruya.jpeg";
+---
+
 <section>
   <div>
-    <h2 id='case1'>寿司つるや</h2>
+    <h2>制作事例-1</h2>
+    <h3>寿司つるや</h3>
+    <GameBoy>
+      <div class='addressBar'>
+        <span></span>
+        <span></span>
+      </div>
+      <iframe
+        title='寿司つるやホームページ'
+        width='100%'
+        height='100%'
+        src='https://sushi-tsuruya.com/'
+      >
+      </iframe>
+    </GameBoy>
+    <style>
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        scroll-snap-align: start;
+        color: #468966;
+      }
+      h2 {
+        font-size: var(--fontsize-2xl);
+      }
+      iframe {
+        border: 0;
+      }
+      .addressBar {
+        width: 100%;
+        height: 25px;
+        background-color: #3a0b43;
+      }
+    </style>
   </div>
-  <style>
-    section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100vh;
-      scroll-snap-align: start;
-      color: #468966;
-    }
-    h2 {
-      font-size: var(--fontsize-2xl);
-    }
-  </style>
 </section>

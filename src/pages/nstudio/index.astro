@@ -2,8 +2,7 @@
 import Header from "../../components/shared/header.astro";
 import NstudioLayout from "../../layouts/nstudio-layout.astro";
 import Case1 from "../../components/nstudio/case-1.astro";
-import MainVisualContainer from "../../components/nstudio/main-visual-container.svelte";
-import Dots from "../../components/nstudio/dots.svelte";
+import MainVisual from "../../components/nstudio/main-visual.svelte";
 import ScrollDownIcon from "../../components/nstudio/scroll-down-icon.svelte";
 ---
 
@@ -11,7 +10,7 @@ import ScrollDownIcon from "../../components/nstudio/scroll-down-icon.svelte";
   <div class='mandatory'>
     <section>
       <Header />
-      <MainVisualContainer client:load />
+      <MainVisual client:load />
       <ScrollDownIcon client:visible />
     </section>
     <section>

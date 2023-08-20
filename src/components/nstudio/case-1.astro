@@ -1,45 +1,60 @@
 ---
-import { Image } from "astro:assets";
 import GameBoy from "./gameboy.astro";
-import img from "../../assets/case/sushi-tsuruya.jpeg";
 ---
 
 <section>
   <div>
     <h2>制作事例-1</h2>
     <h3>「寿司つるや」公式サイト</h3>
-    <GameBoy>
-      <div class='addressbar'></div>
-      <iframe
-        title='寿司つるやホームページ'
-        width='375px'
-        height='667px'
-        src='https://sushi-tsuruya.com/'
-      >
-      </iframe>
-    </GameBoy>
-    <style>
-      section {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: 100vh;
-        scroll-snap-align: start;
-        color: #468966;
-      }
-      h2 {
-        font-size: var(--fontsize-2xl);
-      }
-      iframe {
-        border: 0;
-        transform: scale(0.76);
-        transform-origin: 0 0;
-      }
-      .addressbar {
-        background-color: #3a0b43;
-        width: 100%;
-        height: 30px;
-      }
-    </style>
+    <ul class='slider'>
+      <li class='slide'>
+        <GameBoy>
+          <div class='addressbar'></div>
+          <iframe
+            title='寿司つるやホームページ'
+            width='375px'
+            height='667px'
+            src='https://sushi-tsuruya.com/'
+          >
+          </iframe>
+        </GameBoy>
+      </li>
+      <li class='slide'>2</li>
+    </ul>
   </div>
 </section>
+<style>
+  section {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    color: #468966;
+  }
+  h2 {
+    font-size: var(--fontsize-2xl);
+  }
+  iframe {
+    border: 0;
+    transform: scale(0.67);
+    transform-origin: 0 0;
+  }
+  .addressbar {
+    background-color: #3a0b43;
+    width: 100%;
+    height: 30px;
+  }
+  .slider {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .slide {
+    width: 100vw;
+    list-style: none;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    padding-bottom: var(--spacing-m);
+  }
+</style>

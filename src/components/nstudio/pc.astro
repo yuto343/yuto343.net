@@ -132,13 +132,14 @@ const DOT_SIZE = "5px";
     bottom: 0;
     right: 0;
     overflow: hidden;
+    z-index: -1;
   }
   .vezel {
     position: relative;
     display: grid;
     place-items: center;
     width: calc(100% - 4 * var(--dotSize));
-    height: calc(var(--dotSize) * 15);
+    height: calc(var(--dotSize) * 10);
     background-color: var(--color-dark-100);
     border-top: calc(var(--dotSize) * 2) solid var(--color-base-dark);
     border-right: calc(var(--dotSize) * 2) solid var(--color-base-dark);

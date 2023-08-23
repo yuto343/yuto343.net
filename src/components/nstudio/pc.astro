@@ -1,0 +1,172 @@
+---
+const WIDTH = "400px";
+const HEIGHT = "300px";
+const DOT_SIZE = "5px";
+---
+
+<div class='root'>
+  <span class='bar bar-3'></span>
+  <span class='bar bar-2'></span>
+  <span class='bar bar-1'></span>
+  <div class='screen'>
+    <div class='corner'>
+      <span></span>
+      <span></span>
+    </div>
+    <div class='corner'>
+      <span></span>
+      <span></span>
+    </div>
+    <div class='corner'>
+      <span></span>
+      <span></span>
+    </div>
+    <div class='corner'>
+      <span></span>
+      <span></span>
+    </div>
+    <div class='content'>
+      <slot />
+    </div>
+  </div>
+  <div class='vezel'>
+    <div class='corner'>
+      <span></span>
+      <span></span>
+    </div>
+    <div class='corner'>
+      <span></span>
+      <span></span>
+    </div>
+    <div class='corner'>
+      <span></span>
+      <span></span>
+    </div>
+    <div class='corner'>
+      <span></span>
+      <span></span>
+    </div>
+
+    <span class='logo'></span>
+  </div>
+  <span class='bar bar-1'></span>
+  <span class='bar bar-2'></span>
+  <span class='bar bar-3'></span>
+  <span class='base-1'></span>
+  <span class='base base-2'></span>
+  <span class='base base-3'></span>
+</div>
+<style define:vars={{ width: WIDTH, height: HEIGHT, dotSize: DOT_SIZE }}>
+  .root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--width);
+    height: var(--height);
+  }
+  .bar {
+    display: block;
+    height: var(--dotSize);
+    background-color: var(--color-base-dark);
+  }
+
+  .bar-1 {
+    width: calc(var(--width) - 2 * var(--dotSize));
+  }
+  .bar-2 {
+    width: calc(var(--width) - 4 * var(--dotSize));
+  }
+  .bar-3 {
+    width: calc(var(--width) - 6 * var(--dotSize));
+  }
+  .screen {
+    width: 100%;
+    box-sizing: border-box;
+    border-right: calc(var(--dotSize) * 2) solid var(--color-base-dark);
+    border-left: calc(var(--dotSize) * 2) solid var(--color-base-dark);
+    /* border-top: calc(var(--dotSize) * 2) solid var(--color-base-dark); */
+    height: var(--height);
+    position: relative;
+  }
+  .corner {
+    position: absolute;
+    width: calc(var(--dotSize) * 2);
+    height: calc(var(--dotSize) * 2);
+  }
+  .corner:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+  .corner:nth-child(2) {
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+  }
+  .corner:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    transform: rotate(270deg);
+  }
+  .corner:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+  }
+  .corner > span:nth-child(1) {
+    display: block;
+    width: calc(var(--dotSize) * 2);
+    height: calc(var(--dotSize) * 1);
+    background-color: var(--color-base-dark);
+  }
+  .corner > span:nth-child(2) {
+    display: block;
+    width: calc(var(--dotSize) * 1);
+    height: calc(var(--dotSize) * 1);
+    background-color: var(--color-base-dark);
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+  }
+  .vezel {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: calc(100% - 4 * var(--dotSize));
+    height: calc(var(--dotSize) * 15);
+    background-color: var(--color-dark-100);
+    border-top: calc(var(--dotSize) * 2) solid var(--color-base-dark);
+    border-right: calc(var(--dotSize) * 2) solid var(--color-base-dark);
+    border-left: calc(var(--dotSize) * 2) solid var(--color-base-dark);
+    /* border-bottom: calc(var(--dotSize) * 2) solid var(--color-base-dark); */
+  }
+  .logo {
+    width: calc(var(--dotSize) * 2);
+    height: calc(var(--dotSize) * 2);
+    background-color: var(--color-dark-300);
+    border-radius: 10%;
+  }
+  .base-1 {
+    display: block;
+    width: calc(var(--width) / 5);
+    border-right: calc(var(--dotSize) * 2) solid var(--color-base-dark);
+    border-left: calc(var(--dotSize) * 2) solid var(--color-base-dark);
+    height: calc(var(--dotSize) * 20);
+    background-color: var(--color-dark-100);
+  }
+  .base {
+    height: calc(var(--dotSize) * 2);
+    background-color: var(--color-base-dark);
+  }
+  .base-2 {
+    width: calc(var(--width) / 4);
+  }
+  .base-3 {
+    width: calc(var(--width) / 3.5);
+  }
+</style>

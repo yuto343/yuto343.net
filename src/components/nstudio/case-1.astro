@@ -1,5 +1,6 @@
 ---
 import GameBoy from "./gameboy.astro";
+import Pc from "./pc.astro";
 ---
 
 <section>
@@ -11,6 +12,7 @@ import GameBoy from "./gameboy.astro";
         <GameBoy>
           <div class='addressbar'></div>
           <iframe
+            class='smartphone'
             title='寿司つるやホームページ'
             width='375px'
             height='667px'
@@ -19,7 +21,20 @@ import GameBoy from "./gameboy.astro";
           </iframe>
         </GameBoy>
       </li>
-      <li class='slide'>2</li>
+      <li class='slide'>
+        <div>
+          <Pc>
+            <iframe
+              class='desktop'
+              title='寿司つるやホームページ'
+              width='1024px'
+              height='666px'
+              src='https://sushi-tsuruya.com/'
+            >
+            </iframe>
+          </Pc>
+        </div>
+      </li>
     </ul>
   </div>
 </section>
@@ -32,10 +47,21 @@ import GameBoy from "./gameboy.astro";
   }
   h2 {
     font-size: var(--fontsize-2xl);
+    padding: var(--spacing-l) var(--spacing-xl);
+    margin: 0;
   }
-  iframe {
+  h3 {
+    padding: 0 var(--spacing-xl);
+    margin: 0;
+  }
+  .smartphone {
     border: 0;
     transform: scale(0.67);
+    transform-origin: 0 0;
+  }
+  .desktop {
+    border: 0;
+    transform: scale(0.375);
     transform-origin: 0 0;
   }
   .addressbar {
@@ -51,6 +77,10 @@ import GameBoy from "./gameboy.astro";
     scroll-snap-type: x mandatory;
   }
   .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 100vw;
     list-style: none;
     scroll-snap-align: start;

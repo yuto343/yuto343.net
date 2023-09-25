@@ -4,19 +4,21 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "tinacms dev -c 'astro dev'",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "tinacms build && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/svelte": "^2.0.2",
+    "@tinacms/cli": "^1.5.29",
     "astro": "^2.10.7",
     "astro-iconify": "^1.2.0",
     "svelte": "^3.55.1",
     "svelte-cubed": "^0.2.1",
-    "three": "^0.155.0"
+    "three": "^0.155.0",
+    "tinacms": "^1.5.20"
   },
   "devDependencies": {
     "@types/three": "^0.155.0",

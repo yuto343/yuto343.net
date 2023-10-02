@@ -31,6 +31,48 @@
           "label": "Body"
         }
       ]
+    },
+    {
+      "name": "post",
+      "label": "Posts",
+      "path": "src/content/posts",
+      "fields": [
+        {
+          "type": "string",
+          "name": "title",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "draft",
+          "label": "Draft",
+          "required": true
+        },
+        {
+          "type": "string",
+          "name": "at",
+          "label": "At",
+          "required": false
+        },
+        {
+          "type": "string",
+          "name": "date",
+          "label": "Date",
+          "required": true
+        },
+        {
+          "type": "string",
+          "name": "type",
+          "label": "Type",
+          "required": true
+        },
+        {
+          "type": "rich-text",
+          "name": "body",
+          "label": "Body"
+        }
+      ]
     }
   ]
 }

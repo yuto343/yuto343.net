@@ -1,7 +1,7 @@
 ---
 import { useConstants } from "../../libs/use-constants";
 import { COLOR, SPACING, FONT_SIZE } from "../../constants";
-import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import Item from "./timeline/item.astro";
 import { formatDate, getDayDiff } from "../../libs/date";
 import image from "../../nakano.avif";
@@ -10,11 +10,26 @@ import IconOuter from "./timeline/icon-outer.astro";
 const IMG_SIZE = "120px";
 const ICON_SIZE = "26px";
 const birthday = new Date("1997-12-29");
-const events = await getCollection("events").then((ev) =>
-  ev.sort(
-    ({ data: { date: a } }, { data: { date: b } }) => b.getTime() - a.getTime()
-  )
-);
+// const events = await getCollection("events").then((ev) =>
+//   ev.sort(
+//     ({ data: { date: a } }, { data: { date: b } }) => b.getTime() - a.getTime()
+//   )
+// );
+// const eventCollection = await getCollection("events");
+// let events: CollectionEntry<"events">[] = [];
+// for (const event of eventCollection) {
+//   if (event.data.draft) continue;
+
+//   events.push(event);
+// }
+// const sortedEvents = events.sort(
+//   ({ data: { date: a } }, { data: { date: b } }) => b.getTime() - a.getTime()
+// );
+
+interface Props {
+  events: CollectionEntry<"events">[];
+}
+const { events } = Astro.props;
 ---
 
 <div class='container'>

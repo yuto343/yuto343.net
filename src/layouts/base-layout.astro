@@ -1,6 +1,9 @@
 ---
 import { useConstants } from "../libs/use-constants";
-import { COLOR } from "../constants";
+import { COLOR, SPACING } from "../constants";
+import Header from "../components/shared/header.astro";
+import { Sprite } from "astro-iconify";
+import Navigation from "../components/shared/navigation.astro";
 ---
 
 <!DOCTYPE html>
@@ -12,17 +15,22 @@ import { COLOR } from "../constants";
     <meta name='description' content='' />
   </head>
   <body>
-    <slot />
+    <Header />
+    <Sprite.Provider>
+      <Navigation />
+      <slot />
+    </Sprite.Provider>
   </body>
-  <style define:vars={useConstants({ COLOR })}>
-    html {
-      background-color: var(--COLOR_GRAY100);
-    }
-    body {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-  </style>
 </html>
+<style define:vars={useConstants({ COLOR, SPACING })}>
+  html {
+    background-color: var(--COLOR_GRAY100);
+  }
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: var(--SPACING_PX32);
+  }
+</style>

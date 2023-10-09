@@ -9,23 +9,7 @@ import { Image } from "astro:assets";
 
 <header class='container'>
   <nav>
-    <ul class='linkList'>
-      {
-        pathname !== "/" && (
-          <li class='link'>
-            <a href='/'>
-              <Image
-                src={image}
-                alt='indexに戻る'
-                width={30}
-                height={30}
-                class='img'
-              />
-            </a>
-          </li>
-        )
-      }
-    </ul>
+    <ul class='linkList'></ul>
     <ul class='linkList'>
       {
         Object.entries(SNS_LINKS).map(([key, value]) => (

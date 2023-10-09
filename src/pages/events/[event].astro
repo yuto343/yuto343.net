@@ -3,7 +3,6 @@ import { useConstants } from "../../libs/use-constants";
 import { FONT_SIZE, COLOR, SPACING } from "../../constants";
 import { CollectionEntry, getCollection } from "astro:content";
 import { formatDate } from "../../libs/date";
-import Header from "../../components/shared/header.astro";
 import Layout from "../../layouts/base-layout.astro";
 import Draft from "../../components/event/draft.astro";
 
@@ -24,27 +23,27 @@ const { Content } = await event.render();
 
 <Layout>
   <div>
-  {
-    event.data.draft ? (
-      <Draft />
-    ) : (
-        <Header />
-        <div>
-          <h1>{event.data.title}</h1>
+    {
+      event.data.draft ? (
+        <Draft />
+      ) : (
+        <>
+          <div>
+            <h1>{event.data.title}</h1>
 
             <time>{formatDate(event.data.date)}</time>
             {event.data.at && <p>{event.data.at}</p>}
-        </div>
-        <div class='contentContainer'>
-          <Content />
-        </div>
-    )
-  }
+          </div>
+          <div class='contentContainer'>
+            <Content />
+          </div>
+        </>
+      )
+    }
   </div>
 </Layout>
 
 <style define:vars={useConstants({ FONT_SIZE, COLOR, SPACING })}>
-
   time {
     font-size: var(--FONT_SIZE_PX12);
     text-align: center;
@@ -57,11 +56,11 @@ const { Content } = await event.render();
     text-align: center;
     margin: 0;
   }
-  
+
   p {
     color: var(--COLOR_GRAY600);
     text-align: center;
-    margin: 0 ;
+    margin: 0;
     font-size: var(--FONT_SIZE_PX12);
   }
   .contentContainer {
@@ -70,12 +69,12 @@ const { Content } = await event.render();
     margin: 0 auto;
   }
 
-  .contentContainer :global(p)  {
+  .contentContainer :global(p) {
   }
   .contentContainer :global(a) {
     color: var(--COLOR_GRAY600);
   }
-  .contentContainer :global(a:visited ){
+  .contentContainer :global(a:visited) {
     color: var(--COLOR_GRAY600);
   }
   .contentContainer :global(a:hover) {

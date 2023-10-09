@@ -1,42 +1,53 @@
 ---
 import Sprite from "astro-iconify";
-import Item from "../index/timeline/item.astro";
 import { TIMELINE_ICONS } from "../../constants";
 import { useConstants } from "../../libs/use-constants";
 import { COLOR, SPACING, FONT_SIZE } from "../../constants";
 
 type TimelineType = {
-  slug: "conf" | "career" | "writing" | "development";
+  slug: string;
   title: string;
+  icon: "home" | "conf" | "career" | "writing" | "development";
 }[];
 const types: TimelineType = [
   {
+    slug: "",
+    title: "すべて",
+    icon: "home",
+  },
+  {
     slug: "conf",
     title: "イベント・登壇",
+    icon: "conf",
   },
   {
     slug: "career",
     title: "キャリア",
+    icon: "career",
   },
   {
     slug: "writing",
     title: "書いたもの",
+    icon: "writing",
   },
   {
     slug: "development",
     title: "作ったもの",
+    icon: "development",
   },
 ];
 const ICON_SIZE = 26;
+const { pathname } = Astro.url;
+console.log(pathname);
 ---
 
 <ul>
   {
     types.map((type) => (
-      <li>
+      <li class:list={[pathname === `/${type.slug}` ? "current" : ""]}>
         <a href={`/${type.slug}`}>
           <Sprite
-            name={TIMELINE_ICONS[type.slug]}
+            name={TIMELINE_ICONS[type.icon]}
             width={ICON_SIZE}
             height={ICON_SIZE}
             fill='currentcolor'
@@ -59,6 +70,7 @@ const ICON_SIZE = 26;
   }
   li {
     list-style: none;
+    box-sizing: border-box;
     & > a {
       display: flex;
       flex-direction: column;
@@ -71,5 +83,8 @@ const ICON_SIZE = 26;
     & > a:visited {
       color: var(--COLOR_GRAY600);
     }
+  }
+  li.current {
+    border-bottom: 1px solid var(--COLOR_CAUTION_DEFAULT);
   }
 </style>

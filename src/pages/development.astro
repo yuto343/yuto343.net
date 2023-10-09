@@ -1,9 +1,8 @@
 ---
-import Header from "../components/shared/header.astro";
 import BaseLayout from "../layouts/base-layout.astro";
 import Timeline from "../components/index/timeline.astro";
-import { Sprite } from "astro-iconify";
-import { CollectionEntry, getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 const eventCollection = await getCollection("events");
 let events: CollectionEntry<"events">[] = [];
 for (const event of eventCollection) {
@@ -11,20 +10,11 @@ for (const event of eventCollection) {
   if (event.data.type !== "development") continue;
   events.push(event);
 }
+const sortedEvents = events.sort(
+  ({ data: { date: a } }, { data: { date: b } }) => b.getTime() - a.getTime()
+);
 ---
 
 <BaseLayout>
-  <Header />
-  <div class='container'>
-    <!-- アイコンをsvgシンボルにするため -->
-    <Sprite.Provider>
-      <Timeline events={events} />
-    </Sprite.Provider>
-    <style>
-      .container {
-        display: flex;
-        justify-content: center;
-      }
-    </style>
-  </div>
+  <Timeline events={sortedEvents} />
 </BaseLayout>

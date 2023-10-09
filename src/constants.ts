@@ -31,6 +31,7 @@ export const FONT_SIZE = {
 };
 
 export const TIMELINE_ICONS = {
+  home: "carbon:home",
   conf: "carbon:group-presentation",
   career: "carbon:building",
   writing: "carbon:pen-fountain",

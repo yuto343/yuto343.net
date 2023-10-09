@@ -3,6 +3,7 @@ title: Yaniv Counter
 date: 2022-03-25
 type: development
 draft: false
+at: App Store
 ---
 
 「ヤニブ」というトランプゲームの点数を数えるネイティブアプリを作りました。

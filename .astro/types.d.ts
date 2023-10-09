@@ -174,69 +174,75 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"events": {
-"1.md": {
-	id: "1.md";
-  slug: "1";
+		"career": {
+"admission-university.md": {
+	id: "admission-university.md";
+  slug: "admission-university";
   body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
+  collection: "career";
+  data: InferEntrySchema<"career">
 } & { render(): Render[".md"] };
-"2.md": {
-	id: "2.md";
-  slug: "2";
+"graduate-university.md": {
+	id: "graduate-university.md";
+  slug: "graduate-university";
   body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
+  collection: "career";
+  data: InferEntrySchema<"career">
 } & { render(): Render[".md"] };
-"3.md": {
-	id: "3.md";
-  slug: "3";
+"inno.md": {
+	id: "inno.md";
+  slug: "inno";
   body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
+  collection: "career";
+  data: InferEntrySchema<"career">
 } & { render(): Render[".md"] };
-"4.md": {
-	id: "4.md";
-  slug: "4";
+"pxgrid.md": {
+	id: "pxgrid.md";
+  slug: "pxgrid";
   body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
+  collection: "career";
+  data: InferEntrySchema<"career">
 } & { render(): Render[".md"] };
-"5.md": {
-	id: "5.md";
-  slug: "5";
+"start.md": {
+	id: "start.md";
+  slug: "start";
   body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
+  collection: "career";
+  data: InferEntrySchema<"career">
 } & { render(): Render[".md"] };
-"6.md": {
-	id: "6.md";
-  slug: "6";
+};
+"development": {
+"sushi-tsuruya.md": {
+	id: "sushi-tsuruya.md";
+  slug: "sushi-tsuruya";
   body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
+  collection: "development";
+  data: InferEntrySchema<"development">
 } & { render(): Render[".md"] };
-"7.md": {
-	id: "7.md";
-  slug: "7";
+};
+"event": {
+"css-nite.md": {
+	id: "css-nite.md";
+  slug: "css-nite";
   body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
+  collection: "event";
+  data: InferEntrySchema<"event">
 } & { render(): Render[".md"] };
-"8.md": {
-	id: "8.md";
-  slug: "8";
+"techfeed-experts-night-vol-4.md": {
+	id: "techfeed-experts-night-vol-4.md";
+  slug: "techfeed-experts-night-vol-4";
   body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
+  collection: "event";
+  data: InferEntrySchema<"event">
 } & { render(): Render[".md"] };
-"9.md": {
-	id: "9.md";
-  slug: "9";
+};
+"writing": {
+"nuxt.md": {
+	id: "nuxt.md";
+  slug: "nuxt";
   body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
+  collection: "writing";
+  data: InferEntrySchema<"writing">
 } & { render(): Render[".md"] };
 };
 

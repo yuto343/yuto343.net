@@ -13,16 +13,22 @@ const ICON_SIZE = "26px";
 const birthday = new Date("1997-12-29");
 
 interface Props {
-  events: CollectionEntry<"events">[];
+  events: Array<
+    | CollectionEntry<"career">
+    | CollectionEntry<"development">
+    | CollectionEntry<"event">
+    | CollectionEntry<"writing">
+  >;
+  type: "event" | "career" | "development" | "writing";
 }
-const { events } = Astro.props;
+const { events, type } = Astro.props;
 ---
 
 <div class='container'>
   <Image src={image} class='img' alt='profile image' width={120} height={120} />
   <ul class='timeline'>
     {
-      events.map(({ data: { title, at, date, type }, slug }, index) => {
+      events.map(({ data: { title, at, date }, slug }, index) => {
         const position = index % 2 === 0 ? "right" : "left";
         const prevEventDate =
           events[index + 1]?.data?.date ?? new Date(birthday);

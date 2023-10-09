@@ -2,7 +2,7 @@
 title: ユーティリティファーストなCSS
 at: CSS Nite
 date: 2021-05-12
-type: conf
+type: event
 draft: false
 ---
 

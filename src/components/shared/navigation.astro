@@ -7,7 +7,7 @@ import { COLOR, SPACING, FONT_SIZE } from "../../constants";
 type TimelineType = {
   slug: string;
   title: string;
-  icon: "home" | "conf" | "career" | "writing" | "development";
+  icon: "home" | "event" | "career" | "writing" | "development";
 }[];
 const types: TimelineType = [
   {
@@ -16,9 +16,9 @@ const types: TimelineType = [
     icon: "home",
   },
   {
-    slug: "conf",
+    slug: "event",
     title: "イベント・登壇",
-    icon: "conf",
+    icon: "event",
   },
   {
     slug: "career",
@@ -38,7 +38,6 @@ const types: TimelineType = [
 ];
 const ICON_SIZE = 26;
 const { pathname } = Astro.url;
-console.log(pathname);
 ---
 
 <ul>

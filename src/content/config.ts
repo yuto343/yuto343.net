@@ -1,15 +1,41 @@
 import { z, defineCollection } from "astro:content";
 
-const events = defineCollection({
+const event = defineCollection({
   schema: z.object({
     title: z.string(),
     draft: z.boolean(),
     at: z.string().optional(),
     date: z.date(),
-    type: z.enum(["conf", "career", "writing", "development"]),
+  }),
+});
+const career = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    draft: z.boolean(),
+    at: z.string().optional(),
+    date: z.date(),
+  }),
+});
+const development = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    draft: z.boolean(),
+    at: z.string().optional(),
+    date: z.date(),
+  }),
+});
+const writing = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    draft: z.boolean(),
+    at: z.string().optional(),
+    date: z.date(),
   }),
 });
 
 export const collections = {
-  events,
+  event,
+  career,
+  development,
+  writing,
 };

@@ -1,20 +1,21 @@
 ---
 import { useConstants } from "../../libs/use-constants";
 import { FONT_SIZE, COLOR, SPACING } from "../../constants";
-import { CollectionEntry, getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import { formatDate } from "../../libs/date";
 import Layout from "../../layouts/base-layout.astro";
 import Draft from "../../components/event/draft.astro";
 
 export async function getStaticPaths() {
-  const events = await getCollection("events");
+  const events = await getCollection("event");
   return events.map((event) => ({
     params: { event: event.slug },
     props: { event },
   }));
 }
 interface Props {
-  event: CollectionEntry<"events">;
+  event: CollectionEntry<"event">;
 }
 
 const { event } = Astro.props;

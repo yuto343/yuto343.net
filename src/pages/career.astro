@@ -3,18 +3,13 @@ import BaseLayout from "../layouts/base-layout.astro";
 import Timeline from "../components/index/timeline.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
-const eventCollection = await getCollection("events");
-let events: CollectionEntry<"events">[] = [];
-for (const event of eventCollection) {
-  if (event.data.draft) continue;
-  if (event.data.type !== "career") continue;
-  events.push(event);
-}
-const sortedEvents = events.sort(
+const eventCollection = await getCollection("career");
+
+const sortedEvents = eventCollection.sort(
   ({ data: { date: a } }, { data: { date: b } }) => b.getTime() - a.getTime()
 );
 ---
 
 <BaseLayout>
-  <Timeline events={sortedEvents} />
+  <Timeline events={sortedEvents} type='career' />
 </BaseLayout>

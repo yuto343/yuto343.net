@@ -27,24 +27,26 @@ const { events } = Astro.props;
   <Image src={image} class='img' alt='profile image' width={120} height={120} />
   <ul class='timeline'>
     {
-      events.map(({ data: { title, at, date }, collection, slug }, index) => {
-        const position = index % 2 === 0 ? "right" : "left";
-        const prevEventDate =
-          events[index + 1]?.data?.date ?? new Date(birthday);
-        const dayDiff = getDayDiff(date, prevEventDate);
+      events.map(
+        ({ data: { title, at, date, link }, collection, slug }, index) => {
+          const position = index % 2 === 0 ? "right" : "left";
+          const prevEventDate =
+            events[index + 1]?.data?.date ?? new Date(birthday);
+          const dayDiff = getDayDiff(date, prevEventDate);
 
-        return (
-          <Item
-            dayDiff={dayDiff}
-            position={position}
-            title={title}
-            type={collection}
-            at={at}
-            link={`/${collection}/${slug}`}
-            date={date}
-          />
-        );
-      })
+          return (
+            <Item
+              dayDiff={dayDiff}
+              position={position}
+              title={title}
+              type={collection}
+              at={at}
+              link={link ? link : `/${collection}/${slug}`}
+              date={date}
+            />
+          );
+        }
+      )
     }
     <li class='birthday'>
       <IconOuter size='26px'>

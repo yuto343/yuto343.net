@@ -6,6 +6,7 @@ const event = defineCollection({
     draft: z.boolean(),
     at: z.string().optional(),
     date: z.date(),
+    link: z.string().optional(),
   }),
 });
 const career = defineCollection({
@@ -14,6 +15,7 @@ const career = defineCollection({
     draft: z.boolean(),
     at: z.string().optional(),
     date: z.date(),
+    link: z.string().optional(),
   }),
 });
 const development = defineCollection({
@@ -22,6 +24,7 @@ const development = defineCollection({
     draft: z.boolean(),
     at: z.string().optional(),
     date: z.date(),
+    link: z.string().optional(),
   }),
 });
 const writing = defineCollection({
@@ -30,6 +33,7 @@ const writing = defineCollection({
     draft: z.boolean(),
     at: z.string().optional(),
     date: z.date(),
+    link: z.string().optional(),
   }),
 });
 

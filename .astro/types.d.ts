@@ -219,6 +219,13 @@ declare module 'astro:content' {
   collection: "development";
   data: InferEntrySchema<"development">
 } & { render(): Render[".md"] };
+"yaniv-counter.md": {
+	id: "yaniv-counter.md";
+  slug: "yaniv-counter";
+  body: string;
+  collection: "development";
+  data: InferEntrySchema<"development">
+} & { render(): Render[".md"] };
 };
 "event": {
 "css-nite.md": {
@@ -237,9 +244,65 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "writing": {
+"2023-debugbear-1.md": {
+	id: "2023-debugbear-1.md";
+  slug: "2023-debugbear-1";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"2023-talk-about-careers-1.md": {
+	id: "2023-talk-about-careers-1.md";
+  slug: "2023-talk-about-careers-1";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"astro-rewrite.md": {
+	id: "astro-rewrite.md";
+  slug: "astro-rewrite";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"astro-view-transitions.md": {
+	id: "astro-view-transitions.md";
+  slug: "astro-view-transitions";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"chat-completions-api-1.md": {
+	id: "chat-completions-api-1.md";
+  slug: "chat-completions-api-1";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"chat-completions-api-2.md": {
+	id: "chat-completions-api-2.md";
+  slug: "chat-completions-api-2";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"chat-completions-api-3.md": {
+	id: "chat-completions-api-3.md";
+  slug: "chat-completions-api-3";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
 "nuxt.md": {
 	id: "nuxt.md";
   slug: "nuxt";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"svelte-animation.md": {
+	id: "svelte-animation.md";
+  slug: "svelte-animation";
   body: string;
   collection: "writing";
   data: InferEntrySchema<"writing">

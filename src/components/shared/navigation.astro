@@ -11,11 +11,6 @@ type TimelineType = {
 }[];
 const types: TimelineType = [
   {
-    slug: "",
-    title: "すべて",
-    icon: "home",
-  },
-  {
     slug: "event",
     title: "イベント・登壇",
     icon: "event",
@@ -38,10 +33,20 @@ const types: TimelineType = [
 ];
 const ICON_SIZE = 26;
 const { pathname } = Astro.url;
-console.log(pathname);
 ---
 
 <ul>
+  <li class:list={[pathname === "/" ? "current" : ""]}>
+    <a href='/'>
+      <Sprite
+        name={TIMELINE_ICONS.home}
+        width={ICON_SIZE}
+        height={ICON_SIZE}
+        fill='currentcolor'
+      />
+      <span>すべて</span>
+    </a>
+  </li>
   {
     types.map((type) => (
       <li class:list={[pathname.includes(type.slug) ? "current" : ""]}>

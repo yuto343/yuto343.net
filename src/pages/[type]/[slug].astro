@@ -8,9 +8,24 @@ import Layout from "../../layouts/base-layout.astro";
 import Draft from "../../components/event/draft.astro";
 
 export async function getStaticPaths() {
-  const events = await getCollection("event");
+  const eventCollection = await getCollection("event");
+  const careerCollection = await getCollection("career");
+  const developmentCollection = await getCollection("development");
+  const writingCollection = await getCollection("writing");
+
+  let events: Array<
+    | CollectionEntry<"career">
+    | CollectionEntry<"development">
+    | CollectionEntry<"event">
+    | CollectionEntry<"writing">
+  > = [
+    ...eventCollection,
+    ...careerCollection,
+    ...developmentCollection,
+    ...writingCollection,
+  ];
   return events.map((event) => ({
-    params: { event: event.slug },
+    params: { slug: event.slug, type: event.collection },
     props: { event },
   }));
 }

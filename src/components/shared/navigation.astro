@@ -38,12 +38,13 @@ const types: TimelineType = [
 ];
 const ICON_SIZE = 26;
 const { pathname } = Astro.url;
+console.log(pathname);
 ---
 
 <ul>
   {
     types.map((type) => (
-      <li class:list={[pathname === `/${type.slug}` ? "current" : ""]}>
+      <li class:list={[pathname.includes(type.slug) ? "current" : ""]}>
         <a href={`/${type.slug}`}>
           <Sprite
             name={TIMELINE_ICONS[type.icon]}

@@ -8,7 +8,7 @@ const eventCollection = await getCollection("events");
 let events: CollectionEntry<"events">[] = [];
 for (const event of eventCollection) {
   if (event.data.draft) continue;
-  if (event.data.type !== "career") continue;
+  if (event.data.type !== "conf") continue;
   events.push(event);
 }
 ---

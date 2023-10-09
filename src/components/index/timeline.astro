@@ -4,27 +4,13 @@ import { COLOR, SPACING, FONT_SIZE } from "../../constants";
 import type { CollectionEntry } from "astro:content";
 import Item from "./timeline/item.astro";
 import { formatDate, getDayDiff } from "../../libs/date";
-import image from "../../nakano.avif";
+import image from "../../assets/nakano.webp";
 import { Icon } from "astro-iconify";
+import { Image } from "astro:assets";
 import IconOuter from "./timeline/icon-outer.astro";
 const IMG_SIZE = "120px";
 const ICON_SIZE = "26px";
 const birthday = new Date("1997-12-29");
-// const events = await getCollection("events").then((ev) =>
-//   ev.sort(
-//     ({ data: { date: a } }, { data: { date: b } }) => b.getTime() - a.getTime()
-//   )
-// );
-// const eventCollection = await getCollection("events");
-// let events: CollectionEntry<"events">[] = [];
-// for (const event of eventCollection) {
-//   if (event.data.draft) continue;
-
-//   events.push(event);
-// }
-// const sortedEvents = events.sort(
-//   ({ data: { date: a } }, { data: { date: b } }) => b.getTime() - a.getTime()
-// );
 
 interface Props {
   events: CollectionEntry<"events">[];
@@ -33,7 +19,7 @@ const { events } = Astro.props;
 ---
 
 <div class='container'>
-  <img src={image} class='img' />
+  <Image src={image} class='img' alt='profile image' width={120} height={120} />
   <ul class='timeline'>
     {
       events.map(({ data: { title, at, date, type }, slug }, index) => {
@@ -79,12 +65,10 @@ const { events } = Astro.props;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: var(--SPACING_PX100) 0;
       padding: 0 var(--SPACING_PX4);
     }
     .img {
       border-radius: 100%;
-      width: var(--IMG_SIZE);
       display: block;
       border: 1px solid var(--COLOR_GRAY500);
     }

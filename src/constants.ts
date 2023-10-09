@@ -32,8 +32,8 @@ export const FONT_SIZE = {
 
 export const TIMELINE_ICONS = {
   conf: "carbon:group-presentation",
-  company: "carbon:building",
-  article: "carbon:pen-fountain",
+  career: "carbon:building",
+  writing: "carbon:pen-fountain",
   development: "carbon:code",
 };
 

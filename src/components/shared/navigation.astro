@@ -1,0 +1,75 @@
+---
+import Sprite from "astro-iconify";
+import Item from "../index/timeline/item.astro";
+import { TIMELINE_ICONS } from "../../constants";
+import { useConstants } from "../../libs/use-constants";
+import { COLOR, SPACING, FONT_SIZE } from "../../constants";
+
+type TimelineType = {
+  slug: "conf" | "career" | "writing" | "development";
+  title: string;
+}[];
+const types: TimelineType = [
+  {
+    slug: "conf",
+    title: "イベント・登壇",
+  },
+  {
+    slug: "career",
+    title: "キャリア",
+  },
+  {
+    slug: "writing",
+    title: "書いたもの",
+  },
+  {
+    slug: "development",
+    title: "作ったもの",
+  },
+];
+const ICON_SIZE = 26;
+---
+
+<ul>
+  {
+    types.map((type) => (
+      <li>
+        <a href={`/${type.slug}`}>
+          <Sprite
+            name={TIMELINE_ICONS[type.slug]}
+            width={ICON_SIZE}
+            height={ICON_SIZE}
+            fill='currentcolor'
+          />
+          <span>{type.title}</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style define:vars={useConstants({ COLOR, SPACING, FONT_SIZE })}>
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--SPACING_PX20);
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    & > a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--COLOR_GRAY600);
+      font-size: var(--FONT_SIZE_PX12);
+      text-decoration: none;
+    }
+    & > a:visited {
+      color: var(--COLOR_GRAY600);
+    }
+  }
+</style>

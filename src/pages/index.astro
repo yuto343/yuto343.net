@@ -2,10 +2,14 @@
 import Header from "../components/shared/header.astro";
 import BaseLayout from "../layouts/base-layout.astro";
 import Timeline from "../components/index/timeline.astro";
+import Navigation from "../components/shared/navigation.astro";
 import { Sprite } from "astro-iconify";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { useConstants } from "../libs/use-constants";
+import { SPACING } from "../constants";
 
+const collections = await Astro.glob("../content/*");
 const eventCollection = await getCollection("events");
 let events: CollectionEntry<"events">[] = [];
 for (const event of eventCollection) {
@@ -23,12 +27,15 @@ const sortedEvents = events.sort(
   <div class='container'>
     <!-- アイコンをsvgシンボルにするため -->
     <Sprite.Provider>
+      <Navigation />
       <Timeline events={sortedEvents} />
     </Sprite.Provider>
-    <style>
+    <style define:vars={useConstants({ SPACING })}>
       .container {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        gap: var(--SPACING_PX32);
       }
     </style>
   </div>

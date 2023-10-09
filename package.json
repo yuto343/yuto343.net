@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/svelte": "^2.0.2",
     "@tinacms/cli": "^1.5.29",
-    "astro": "^2.10.7",
+    "astro": "^3.2.3",
     "astro-iconify": "^1.2.0",
     "svelte": "^3.55.1",
     "svelte-cubed": "^0.2.1",

@@ -6,7 +6,7 @@ const events = defineCollection({
     draft: z.boolean(),
     at: z.string().optional(),
     date: z.date(),
-    type: z.enum(["conf", "company", "article", "development"]),
+    type: z.enum(["conf", "career", "writing", "development"]),
   }),
 });
 

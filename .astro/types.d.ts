@@ -293,6 +293,13 @@ declare module 'astro:content' {
   collection: "writing";
   data: InferEntrySchema<"writing">
 } & { render(): Render[".md"] };
+"microcms-preview.md": {
+	id: "microcms-preview.md";
+  slug: "microcms-preview";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
 "nuxt.md": {
 	id: "nuxt.md";
   slug: "nuxt";

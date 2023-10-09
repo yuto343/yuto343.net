@@ -31,63 +31,75 @@ const { position, title, date, link, at, dayDiff, type } = Astro.props;
   </IconOuter>
   <time class='date'>{formatDate(date)}</time>
   {at && <h2 class='title'>{at}</h2>}
-  <a href={link} class='link'>{title}</a>
-</li>
+  <a href={link} class='link'>
+    {
+      link.startsWith("https://") && (
+        <Sprite
+          name='system-uicons:external'
+          width={16}
+          height={16}
+          fill='currentcolor'
+        />
+      )
+    }
+    {title}
+  </a>
 
-<style
-  define:vars={{
-    ...useConstants({ COLOR, SPACING, FONT_SIZE }),
-    ICON_OUTER_SIZE,
-    dayDiff: `${dayDiff * 0.2}px`,
-  }}
->
-  .item {
-    list-style: none;
-    display: grid;
-    column-gap: var(--SPACING_PX8);
-    row-gap: var(--SPACING_PX4);
-    margin-bottom: var(--dayDiff);
-  }
-  .item.-right {
-    grid-template:
-      "icon date" auto
-      "icon title" auto
-      "icon link" auto
-      / var(--ICON_OUTER_SIZE) 1fr;
-    margin-left: calc(-1 * var(--ICON_OUTER_SIZE) / 2);
-  }
-  .item.-left {
-    text-align: right;
-    grid-template:
-      "date icon" auto
-      "title icon" auto
-      "link icon" auto
-      / 1fr var(--ICON_OUTER_SIZE);
-    margin-right: calc(-1 * var(--ICON_OUTER_SIZE) / 2);
-    position: relative;
-    right: 100%;
-  }
-  .date {
-    grid-area: date;
-    hegiht: var(--ICON_OUTER_SIZE);
-    font-size: var(--FONT_SIZE_PX12);
-    line-height: var(--ICON_OUTER_SIZE);
-  }
-  .title {
-    grid-area: title;
-    margin: 0;
-    font-weight: normal;
-    font-size: var(--FONT_SIZE_PX14);
-  }
-  .link {
-    grid-area: link;
-    font-size: var(--FONT_SIZE_PX16);
-    color: var(--COLOR_GRAY600);
-  }
-  .link:visited {
-    color: var(--COLOR_GRAY600);
-  }
-  .link:hover {
-    color: var(--COLOR_GRAY500);
-  }
-</style>
+  <style
+    define:vars={{
+      ...useConstants({ COLOR, SPACING, FONT_SIZE }),
+      ICON_OUTER_SIZE,
+      dayDiff: `${dayDiff * 0.2}px`,
+    }}
+  >
+    .item {
+      list-style: none;
+      display: grid;
+      column-gap: var(--SPACING_PX8);
+      row-gap: var(--SPACING_PX4);
+      margin-bottom: var(--dayDiff);
+    }
+    .item.-right {
+      grid-template:
+        "icon date" auto
+        "icon title" auto
+        "icon link" auto
+        / var(--ICON_OUTER_SIZE) 1fr;
+      margin-left: calc(-1 * var(--ICON_OUTER_SIZE) / 2);
+    }
+    .item.-left {
+      text-align: right;
+      grid-template:
+        "date icon" auto
+        "title icon" auto
+        "link icon" auto
+        / 1fr var(--ICON_OUTER_SIZE);
+      margin-right: calc(-1 * var(--ICON_OUTER_SIZE) / 2);
+      position: relative;
+      right: 100%;
+    }
+    .date {
+      grid-area: date;
+      hegiht: var(--ICON_OUTER_SIZE);
+      font-size: var(--FONT_SIZE_PX12);
+      line-height: var(--ICON_OUTER_SIZE);
+    }
+    .title {
+      grid-area: title;
+      margin: 0;
+      font-weight: normal;
+      font-size: var(--FONT_SIZE_PX14);
+    }
+    .link {
+      grid-area: link;
+      font-size: var(--FONT_SIZE_PX16);
+      color: var(--COLOR_GRAY600);
+    }
+    .link:visited {
+      color: var(--COLOR_GRAY600);
+    }
+    .link:hover {
+      color: var(--COLOR_GRAY500);
+    }
+  </style>
+</li>

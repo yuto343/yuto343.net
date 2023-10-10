@@ -36,8 +36,8 @@ const { position, title, date, link, at, dayDiff, type } = Astro.props;
       link.startsWith("https://") && (
         <Sprite
           name='system-uicons:external'
-          width={16}
-          height={16}
+          width={12}
+          height={12}
           fill='currentcolor'
         />
       )
@@ -56,7 +56,6 @@ const { position, title, date, link, at, dayDiff, type } = Astro.props;
       list-style: none;
       display: grid;
       column-gap: var(--SPACING_PX8);
-      row-gap: var(--SPACING_PX4);
       margin-bottom: var(--dayDiff);
     }
     .item.-right {

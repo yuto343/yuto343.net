@@ -244,6 +244,34 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "writing": {
+"2021-practical-jamstack-1.md": {
+	id: "2021-practical-jamstack-1.md";
+  slug: "2021-practical-jamstack-1";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"2021-practical-jamstack-2.md": {
+	id: "2021-practical-jamstack-2.md";
+  slug: "2021-practical-jamstack-2";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"2021-practical-jamstack-3.md": {
+	id: "2021-practical-jamstack-3.md";
+  slug: "2021-practical-jamstack-3";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"2021-practical-jamstack-4.md": {
+	id: "2021-practical-jamstack-4.md";
+  slug: "2021-practical-jamstack-4";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
 "2023-debugbear-1.md": {
 	id: "2023-debugbear-1.md";
   slug: "2023-debugbear-1";

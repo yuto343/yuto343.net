@@ -2,6 +2,10 @@
 
 ポートフォリオサイト
 
+URL には yuto と 343 の間にハイフンがあるので注意...
+
+[https://yuto-343.net](https://yuto-343.net)
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:

@@ -38,6 +38,34 @@ export const TIMELINE_ICONS = {
   development: "carbon:code",
 };
 
+type TimelineType = {
+  slug: string;
+  title: string;
+  icon: "home" | "event" | "career" | "writing" | "development";
+}[];
+
+export const TIMELINE_TYPES: TimelineType = [
+  {
+    slug: "event",
+    title: "イベント・登壇",
+    icon: "event",
+  },
+  {
+    slug: "career",
+    title: "キャリア",
+    icon: "career",
+  },
+  {
+    slug: "writing",
+    title: "書いたもの",
+    icon: "writing",
+  },
+  {
+    slug: "development",
+    title: "作ったもの",
+    icon: "development",
+  },
+];
 export const SNS_LINKS = {
   twitter: "https://twitter.com/uchoco898",
   github: "https://github.com/yuto343",

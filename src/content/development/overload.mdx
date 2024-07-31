@@ -1,0 +1,90 @@
+---
+title: OVERLOAD
+date: 2024-07-25
+type: development
+draft: false
+at: AppStore
+---
+import ContentImage from "../../components/content/content-image.astro"
+import overloadLogo from "../../assets/development/overload/home-icon.png"
+import ringImage from "../../assets/development/overload/home.png"
+import calenderImage from "../../assets/development/overload/calender.png"
+import enterWorkoutImage from "../../assets/development/overload/enter-workout.png"
+import workoutImage from "../../assets/development/overload/workout.png"
+
+<ContentImage src={overloadLogo}alt={"overloadのロゴ"}width={300}/>
+
+「OVERLOAD」というフィットネスを記録するアプリを作りました。
+
+AppStoreで公開しています。
+
+[OVERLOAD](https://apps.apple.com/us/app/overload/id6479742820)
+
+OVERLOADという名前は、「過負荷」という意味で、前回よりも重い重量を持つことで、筋肉を成長させることができるという考え方に由来しています。
+
+画像のように、ホーム画面にはリング状のグラフとして、前回のボリューム(回数\*重量)に対しての達成率が表示されます。
+
+<ContentImage src={ringImage} alt={"overloadのホーム画面"} width={200}/>
+
+前回よりも重いボリュームでリングが完成するという感じです。
+
+人間はこういうのを完成させたくなるはずなので、前回より重い重量を持つモチベーションに少しでも繋がればいいなと思っています。
+
+また、カレンダー画面ではGitHubのあのUIを参考に、たくさんトレーニングした日はカレンダーに濃く表示されるようにしました。
+
+<ContentImage src={calenderImage}alt={"overloadのカレンダー画面"} width={200}/>
+
+その他、トレーニング前に種目を選び...
+
+<ContentImage src={enterWorkoutImage} alt={"overloadのワークアウト選択画面"} width={200}/>
+
+トレーニング中には休憩・セット中の時間などを計測されることで、ダレることなく短期集中でトレーニングできるんじゃないかなというUIにしてみたりしました。
+
+<ContentImage src={workoutImage} alt={"overloadのワークアウト中画面"} width={200}/>
+
+他にも、ユーザーがトレーニングを継続する気持ちになるような工夫を随所にしているつもりです！
+
+トレーニングしている人は、ぜひ使ってみてください。なお本人は筋トレ初心者でマッチョじゃないです。
+でもこのアプリのおかげて20年後にはジェイソンステイサムになっているはずです。
+
+## 開発背景
+
+最初のモチベーションは、自分自身が筋トレをしていて、重要なことが「筋トレ・食事管理・体重管理」の3つだと感じでおり、それらをわかりやすいUIで、ひとつのアプリで管理したいなと思ったからです。
+
+有名なアプリでは、機能が多いものか、逆に単機能なものが多く、これら3つだけを管理するものがないなぁと思いました。
+
+また、課金を促すUIや広告も日々使うアプリとしてはあまり好きではなく、開発しようと思いました。
+
+現在はその中の「筋トレ」を記録する機能しかありませんが、今後は他の機能も追加していく予定です。
+
+当初は4月にリリースしたかったものの、挙動に納得がいかず、ライブラリを使うのをやめて自作したりとかしていた結果、もう8月も目前になってしまいました。
+
+ファーストリリースまで半年以上ぐらいかかった計算です。
+
+将来的にはもっと機能を充実させ、コーヒー1杯分ぐらいの価格の月額課金で立派な副収入にしたいなと思っています。今の所、ExpoのビルドやApple Developer Programやらでマイナスです。
+
+とりあえずリリースできたので、Expoの月額無料枠だけで開発していきたいと思います。円安なので1ビルド2ドルが痛いです。
+
+あぁ人生...
+
+## 技術的な話
+
+ReactNative+Expoで、状態管理にmobx、バックエンドにSupabaseを利用しています。
+
+ReactNative+Expoは数年前にヤニブカウンターを作った時にも使い、その前に公開には至らなかったアプリを開発したときにも使っていたので慣れ親しんだ技術という感じです。
+
+mobxも仕事で出会ってからは4年ぐらいで、慣れ親しんだライブラリです。
+
+このアプリには認証機能やデータベースが必要だったので、せっかくなので慣れ親しんだFirebaseではなくSupabaseを使ってみました。
+
+SupabaseはFirebase Alternativeと言われていますが、中身はPostgreSQLということで、できることは近くても、仕組みが全然違うなという印象でした。
+
+フロントエンドエンジニアとしてあまり馴染みがなく、知らなかったリレーショナルデータベースの作法や仕組みを学ぶことができたので、よかったです。
+
+テーブル結合とか、初見ではわからんなぁって思いました。なんで配列ないの?みたいな。
+
+Supabaseは無料プランも結構使えて、次に作るアプリでも使いたいなと思っています。
+
+次に何か作るときは状態管理にReactQuery、SWRのようなライブラリを使いたいですね。
+
+使っていただいた際の不具合報告や、こんな機能欲しいみたいなのがあれば、TwitterのDMなどで教えてください。リクエストお待ちしております！

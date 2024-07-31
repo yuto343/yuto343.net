@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets"
+import { useConstants } from "../../libs/use-constants"
+import { SPACING } from "../../constants"
+const { src, alt, width } = Astro.props
+---
+<div>
+<Image {src} {alt} {width}>
+</div>
+<style define:vars={useConstants({SPACING})}>
+	div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding:var(--SPACING_PX32);
+	}
+</style>

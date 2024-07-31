@@ -67,7 +67,7 @@ export const TIMELINE_TYPES: TimelineType = [
   },
 ];
 export const SNS_LINKS = {
-  twitter: "https://twitter.com/uchoco898",
+  x: "https://x.com/uchoco898",
   github: "https://github.com/yuto343",
 };
 

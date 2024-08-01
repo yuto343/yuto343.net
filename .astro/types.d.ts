@@ -569,13 +569,6 @@ declare module 'astro:content' {
   collection: "writing";
   data: InferEntrySchema<"writing">
 } & { render(): Render[".md"] };
-"astro-view-transitions.md": {
-	id: "astro-view-transitions.md";
-  slug: "astro-view-transitions";
-  body: string;
-  collection: "writing";
-  data: InferEntrySchema<"writing">
-} & { render(): Render[".md"] };
 "future-works-16.md": {
 	id: "future-works-16.md";
   slug: "future-works-16";

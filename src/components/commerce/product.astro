@@ -1,0 +1,72 @@
+---
+import Icon from "astro-iconify";
+import bag1 from "../../assets/commerce/bag-1.png";
+const { image } = Astro.props;
+---
+
+<li class='item'>
+  <div class='desc'>
+    <p>レザーバッグ</p>
+    <p>￥20,000</p>
+  </div>
+  <img class='image' src={image} alt='bag-1' width={200} />
+  <div class='decider'>
+    <button class='cart' type='button'>カートに入れる</button>
+    <button type='button' class='detail' title='詳しく見る'>
+      <Icon name='ic:outline-more-horiz' color='white' />
+    </button>
+  </div>
+</li>
+<style>
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--SPACING_PX100);
+    height: 100vh;
+    scroll-snap-align: start;
+  }
+  .product {
+    gap: var(--SPACING_PX52);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image {
+    filter: drop-shadow(0px 110px 90px rgba(0, 0, 0, 0.6));
+  }
+  .desc {
+    color: white;
+    text-align: center;
+  }
+  p {
+    margin: 0;
+  }
+  .decider {
+    justify-content: center;
+    display: flex;
+    gap: var(--SPACING_PX20);
+  }
+  .detail {
+    position: relative;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+  }
+  .cart {
+    position: relative;
+    border-radius: 9999px;
+    padding: var(--SPACING_PX8) var(--SPACING_PX20);
+    font-size: var(--FONT_SIZE_PX18);
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+  }
+</style>

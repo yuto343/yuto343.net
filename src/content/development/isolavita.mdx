@@ -1,0 +1,60 @@
+---
+title: Astro + Shopifyで作ったヘッドレスECサイト
+date: 2024-02-07
+type: development
+draft: false
+at: web
+---
+
+import ContentImage from "../../components/content/content-image.astro";
+import mockImage from "../../assets/development/isolavita/mock.png";
+import itemImage from "../../assets/development/isolavita/item.png";
+import lighthouseImage from "../../assets/development/isolavita/lighthouse.png";
+import maestroImage from "../../assets/development/isolavita/maestro.png";
+
+友人の会社のECサイトをAstro + Shopify storefront APIで作成しました。
+
+[isolavita.jp](https://isolavita.jp/)
+
+<ContentImage src={mockImage} alt={"isolavitaのモック画像"} width={400} />
+
+ISOLAVITAは「イタリア各地に点在するマエストロたちの魅力を伝える」を掲げてものづくりをしているブランドです。
+
+各製品のロゴには、その製品を作るマエストロの住む街の名前が入っています。
+
+<ContentImage src={itemImage} alt={"isolavitaの財布"} width={600} />
+
+## 開発背景
+
+当初はあまり工数をかけずに、販売チャネルを手に入れたいという要望が強かったので、shopifyのテンプレートを使い、どうしても変更したい部分はテンプレートを改修するような形で進めていました。
+
+しかし、やっていくうちにテンプレートを改修する方法では、かえって対応するのに時間がかかるような要望や実現したいUIなどが出てきたので、
+
+- ページのパフォーマンス
+- サイトのカスタマイズ性
+- 工数
+- 技術的興味
+
+を天秤にかけた結果、デメリットである工数に関しては自身の技術的興味が強いので、半ば趣味でいいと友人に提案し、思い切ってAstroとShopify storefront APIを使って実装する方法に変更しました。
+
+## パフォーマンスの良いサイト
+
+ECサイトにおいて読み込みの速さは重要です。
+
+Googleが公開しているデータによると、モバイルサイトの読み込み速度が1秒遅れるだけで、コンバージョン率が20%減少すると言われていたり、Amazonは読み込みが100ミリ秒遅くなるごとに、売り上げが1%減少するという結果が公表されていたりします。
+
+商品の性質的に、かなり確度の高い顧客が訪れそうなので、上述したデータがどこまで当てはまるかは分かりませんが、このアーキテクチャによって他のECにはあまりない、非常に高速なサイトが実現できたと思います。
+
+<ContentImage
+  src={lighthouseImage}
+  alt={"スクリーンショット：lighthouse"}
+  width={600}
+/>
+
+## UI
+
+個人的には、イタリアの地図上にマエストロたちが住んでいるエリアをピンで表示し、それに応じてマエストロを表示するというUIが一番お気に入りです。
+
+<ContentImage src={maestroImage} alt={"マエストロページ"} width={600} />
+
+どのようにすればISOLAVITAのこだわりを伝えられるか、ということを考えながら悩んで作成したものなので、強い思い入れがあります。

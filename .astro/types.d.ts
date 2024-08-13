@@ -141,58 +141,65 @@ declare module 'astro:content' {
   slug: "admission-university";
   body: string;
   collection: "career";
-  data: InferEntrySchema<"career">
+  data: any
 } & { render(): Render[".md"] };
 "graduate-university.md": {
 	id: "graduate-university.md";
   slug: "graduate-university";
   body: string;
   collection: "career";
-  data: InferEntrySchema<"career">
+  data: any
 } & { render(): Render[".md"] };
 "inno.md": {
 	id: "inno.md";
   slug: "inno";
   body: string;
   collection: "career";
-  data: InferEntrySchema<"career">
+  data: any
 } & { render(): Render[".md"] };
 "pxgrid.md": {
 	id: "pxgrid.md";
   slug: "pxgrid";
   body: string;
   collection: "career";
-  data: InferEntrySchema<"career">
+  data: any
 } & { render(): Render[".md"] };
 "start.md": {
 	id: "start.md";
   slug: "start";
   body: string;
   collection: "career";
-  data: InferEntrySchema<"career">
+  data: any
 } & { render(): Render[".md"] };
 };
 "development": {
+"isolavita.mdx": {
+	id: "isolavita.mdx";
+  slug: "isolavita";
+  body: string;
+  collection: "development";
+  data: any
+} & { render(): Render[".mdx"] };
 "overload.mdx": {
 	id: "overload.mdx";
   slug: "overload";
   body: string;
   collection: "development";
-  data: InferEntrySchema<"development">
+  data: any
 } & { render(): Render[".mdx"] };
 "sushi-tsuruya.md": {
 	id: "sushi-tsuruya.md";
   slug: "sushi-tsuruya";
   body: string;
   collection: "development";
-  data: InferEntrySchema<"development">
+  data: any
 } & { render(): Render[".md"] };
 "yaniv-counter.md": {
 	id: "yaniv-counter.md";
   slug: "yaniv-counter";
   body: string;
   collection: "development";
-  data: InferEntrySchema<"development">
+  data: any
 } & { render(): Render[".md"] };
 };
 "event": {
@@ -201,14 +208,14 @@ declare module 'astro:content' {
   slug: "css-nite";
   body: string;
   collection: "event";
-  data: InferEntrySchema<"event">
+  data: any
 } & { render(): Render[".md"] };
 "techfeed-experts-night-vol-4.md": {
 	id: "techfeed-experts-night-vol-4.md";
   slug: "techfeed-experts-night-vol-4";
   body: string;
   collection: "event";
-  data: InferEntrySchema<"event">
+  data: any
 } & { render(): Render[".md"] };
 };
 "writing": {
@@ -217,385 +224,392 @@ declare module 'astro:content' {
   slug: "2020-tailwind-css-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2020-tailwind-css-2.md": {
 	id: "2020-tailwind-css-2.md";
   slug: "2020-tailwind-css-2";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2020-tailwind-css-3.md": {
 	id: "2020-tailwind-css-3.md";
   slug: "2020-tailwind-css-3";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2020-tailwind-css-4.md": {
 	id: "2020-tailwind-css-4.md";
   slug: "2020-tailwind-css-4";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2020-tailwind-css-5.md": {
 	id: "2020-tailwind-css-5.md";
   slug: "2020-tailwind-css-5";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2020-tailwind-talk-1.md": {
 	id: "2020-tailwind-talk-1.md";
   slug: "2020-tailwind-talk-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2020-tailwind-talk-2.md": {
 	id: "2020-tailwind-talk-2.md";
   slug: "2020-tailwind-talk-2";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2020-tech-news-1.md": {
 	id: "2020-tech-news-1.md";
   slug: "2020-tech-news-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-microcms-1.md": {
 	id: "2021-microcms-1.md";
   slug: "2021-microcms-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-microcms-2.md": {
 	id: "2021-microcms-2.md";
   slug: "2021-microcms-2";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-microcms-3.md": {
 	id: "2021-microcms-3.md";
   slug: "2021-microcms-3";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-microcms-4.md": {
 	id: "2021-microcms-4.md";
   slug: "2021-microcms-4";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-microcms-5.md": {
 	id: "2021-microcms-5.md";
   slug: "2021-microcms-5";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-microcms-6.md": {
 	id: "2021-microcms-6.md";
   slug: "2021-microcms-6";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-microcms-7.md": {
 	id: "2021-microcms-7.md";
   slug: "2021-microcms-7";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-practical-jamstack-1.md": {
 	id: "2021-practical-jamstack-1.md";
   slug: "2021-practical-jamstack-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-practical-jamstack-2.md": {
 	id: "2021-practical-jamstack-2.md";
   slug: "2021-practical-jamstack-2";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-practical-jamstack-3.md": {
 	id: "2021-practical-jamstack-3.md";
   slug: "2021-practical-jamstack-3";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2021-practical-jamstack-4.md": {
 	id: "2021-practical-jamstack-4.md";
   slug: "2021-practical-jamstack-4";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-1.md": {
 	id: "2022-astro-1.md";
   slug: "2022-astro-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-10.md": {
 	id: "2022-astro-10.md";
   slug: "2022-astro-10";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-11.md": {
 	id: "2022-astro-11.md";
   slug: "2022-astro-11";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-12.md": {
 	id: "2022-astro-12.md";
   slug: "2022-astro-12";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-2.md": {
 	id: "2022-astro-2.md";
   slug: "2022-astro-2";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-3.md": {
 	id: "2022-astro-3.md";
   slug: "2022-astro-3";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-4.md": {
 	id: "2022-astro-4.md";
   slug: "2022-astro-4";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-5.md": {
 	id: "2022-astro-5.md";
   slug: "2022-astro-5";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-6.md": {
 	id: "2022-astro-6.md";
   slug: "2022-astro-6";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-7.md": {
 	id: "2022-astro-7.md";
   slug: "2022-astro-7";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-8.md": {
 	id: "2022-astro-8.md";
   slug: "2022-astro-8";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-astro-9.md": {
 	id: "2022-astro-9.md";
   slug: "2022-astro-9";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-codegrid-guide-1.md": {
 	id: "2022-codegrid-guide-1.md";
   slug: "2022-codegrid-guide-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-jamstack-hosting-1.md": {
 	id: "2022-jamstack-hosting-1.md";
   slug: "2022-jamstack-hosting-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-my-dev-environment-1.md": {
 	id: "2022-my-dev-environment-1.md";
   slug: "2022-my-dev-environment-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-static-site-generator-1.md": {
 	id: "2022-static-site-generator-1.md";
   slug: "2022-static-site-generator-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-static-site-generator-2.md": {
 	id: "2022-static-site-generator-2.md";
   slug: "2022-static-site-generator-2";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2022-static-site-generator-3.md": {
 	id: "2022-static-site-generator-3.md";
   slug: "2022-static-site-generator-3";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2023-astro-image-1.md": {
 	id: "2023-astro-image-1.md";
   slug: "2023-astro-image-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2023-astro-view-transitions-1.md": {
 	id: "2023-astro-view-transitions-1.md";
   slug: "2023-astro-view-transitions-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2023-debugbear-1.md": {
 	id: "2023-debugbear-1.md";
   slug: "2023-debugbear-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2023-openai-api-1.md": {
 	id: "2023-openai-api-1.md";
   slug: "2023-openai-api-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2023-openai-api-2.md": {
 	id: "2023-openai-api-2.md";
   slug: "2023-openai-api-2";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2023-openai-api-3.md": {
 	id: "2023-openai-api-3.md";
   slug: "2023-openai-api-3";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2023-talk-about-careers-1.md": {
 	id: "2023-talk-about-careers-1.md";
   slug: "2023-talk-about-careers-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2024-arc-1.md": {
 	id: "2024-arc-1.md";
   slug: "2024-arc-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
+} & { render(): Render[".md"] };
+"2024-supabase-1.md": {
+	id: "2024-supabase-1.md";
+  slug: "2024-supabase-1";
+  body: string;
+  collection: "writing";
+  data: any
 } & { render(): Render[".md"] };
 "2024-tinacms-1.md": {
 	id: "2024-tinacms-1.md";
   slug: "2024-tinacms-1";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2024-tinacms-2.md": {
 	id: "2024-tinacms-2.md";
   slug: "2024-tinacms-2";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2024-tinacms-3.md": {
 	id: "2024-tinacms-3.md";
   slug: "2024-tinacms-3";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2024-tinacms-4.md": {
 	id: "2024-tinacms-4.md";
   slug: "2024-tinacms-4";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "2024-tinacms-5.md": {
 	id: "2024-tinacms-5.md";
   slug: "2024-tinacms-5";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "astro-rewrite.md": {
 	id: "astro-rewrite.md";
   slug: "astro-rewrite";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "future-works-16.md": {
 	id: "future-works-16.md";
   slug: "future-works-16";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "microcms-preview.md": {
 	id: "microcms-preview.md";
   slug: "microcms-preview";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "nuxt.md": {
 	id: "nuxt.md";
   slug: "nuxt";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 "svelte-animation.md": {
 	id: "svelte-animation.md";
   slug: "svelte-animation";
   body: string;
   collection: "writing";
-  data: InferEntrySchema<"writing">
+  data: any
 } & { render(): Render[".md"] };
 };
 
@@ -607,5 +621,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../src/content/config.js");
+	export type ContentConfig = never;
 }

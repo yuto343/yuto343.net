@@ -103,6 +103,10 @@ const category = TIMELINE_TYPES.find(
   .contentContainer :global(a:hover) {
     color: var(--COLOR_GRAY500);
   }
+  .contentContainer :global(img) {
+    max-width: 100%;
+    object-fit: contain;
+  }
   .footer {
     margin: var(--SPACING_PX32) 0;
     display: flex;

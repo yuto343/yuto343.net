@@ -210,6 +210,13 @@ declare module 'astro:content' {
   collection: "event";
   data: any
 } & { render(): Render[".md"] };
+"frontend-conference-hokkaido-2024.mdx": {
+	id: "frontend-conference-hokkaido-2024.mdx";
+  slug: "frontend-conference-hokkaido-2024";
+  body: string;
+  collection: "event";
+  data: any
+} & { render(): Render[".mdx"] };
 "techfeed-experts-night-vol-4.md": {
 	id: "techfeed-experts-night-vol-4.md";
   slug: "techfeed-experts-night-vol-4";

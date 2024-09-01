@@ -597,6 +597,13 @@ declare module 'astro:content' {
   collection: "writing";
   data: InferEntrySchema<"writing">
 } & { render(): Render[".md"] };
+"expo-healthkit.md": {
+	id: "expo-healthkit.md";
+  slug: "expo-healthkit";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
 "future-works-16.md": {
 	id: "future-works-16.md";
   slug: "future-works-16";

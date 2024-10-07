@@ -187,6 +187,13 @@ declare module 'astro:content' {
   collection: "development";
   data: InferEntrySchema<"development">
 } & { render(): Render[".mdx"] };
+"sabimori.mdx": {
+	id: "sabimori.mdx";
+  slug: "sabimori";
+  body: string;
+  collection: "development";
+  data: InferEntrySchema<"development">
+} & { render(): Render[".mdx"] };
 "sushi-tsuruya.md": {
 	id: "sushi-tsuruya.md";
   slug: "sushi-tsuruya";

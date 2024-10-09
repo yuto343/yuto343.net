@@ -562,6 +562,20 @@ declare module 'astro:content' {
   collection: "writing";
   data: InferEntrySchema<"writing">
 } & { render(): Render[".md"] };
+"2024-supabase-3.md": {
+	id: "2024-supabase-3.md";
+  slug: "2024-supabase-3";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
+"2024-supabase-4.md": {
+	id: "2024-supabase-4.md";
+  slug: "2024-supabase-4";
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">
+} & { render(): Render[".md"] };
 "2024-tinacms-1.md": {
 	id: "2024-tinacms-1.md";
   slug: "2024-tinacms-1";

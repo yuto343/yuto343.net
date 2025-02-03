@@ -1,9 +1,7 @@
 export const onRequest: PagesFunction = async ({ params }) => {
   const ORIGIN = "https://topic-site-migration.conference-as2.pages.dev";
 
-  const target = params.conference;
+  const { slug } = params;
 
-  return fetch(
-    `${ORIGIN}/${typeof target === "string" ? target : target.join("/")}`
-  );
+  return fetch(`${ORIGIN}/${typeof slug === "string" ? slug : slug.join("/")}`);
 };

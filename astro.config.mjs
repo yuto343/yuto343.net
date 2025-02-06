@@ -11,5 +11,5 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   integrations: [svelte(), mdx()],
   adapter: cloudflare(),
-  output: "server",
+  output: "static",
 });
